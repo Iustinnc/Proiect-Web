@@ -1,0 +1,172 @@
+/* p {
+    border: 2px solid blue;
+    background-color: lightyellow;
+} */
+
+#grid_pagina{
+    display: grid;
+    grid-template-areas: "  prezentare   prezentare    prezentare       prezentare"
+                         "   continut     continut      continut         continut"
+                         "   calendar      tabel         tabel           anunturi"
+                         "  lista_util   date_util   date_site_server  date_site_server";
+
+    background-color: var(--border-color);
+    color: var(--secondary-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px;
+
+    grid-template-columns: minmax(200px, 1fr) minmax(250px, 1.5fr) minmax(250px, 1.5fr) minmax(200px, 1fr);
+    gap: 20px;
+    
+}
+
+
+
+#prezentare{
+    grid-area: prezentare;
+}
+
+#continut{
+    grid-area: continut;
+}
+
+#tabel{
+    grid-area: tabel;
+}
+
+#calendar{
+    grid-area: calendar;
+    
+    max-width: 100%;           /* containerul nu depășește viewport-ul */
+    overflow-x: auto;          /* scroll orizontal */
+    overflow-y: hidden;        /* fără scroll vertical */
+    background-color: var(--border-color);
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    color: white;
+
+    white-space: nowrap;
+}
+
+
+
+
+#anunturi{
+    grid-area: anunturi;
+
+    
+    max-width: 100%; 
+    white-space: nowrap;
+    overflow-x: auto;  /* scrollbar vertical când conținutul depășește înălțimea */
+    overflow-y: hidden;
+    padding: 15px;
+    background-color: var(--border-color);
+    border-radius: 10px;
+    color : white;
+}
+
+#lista_util{
+    grid-area: lista_util;
+
+    max-width: 100%; 
+    white-space: nowrap;
+    overflow-x: auto;  /* scrollbar vertical când conținutul depășește înălțimea */
+    overflow-y: hidden;
+    padding: 15px;
+    
+    border-radius: 10px;
+    
+}
+
+#date_util{
+    grid-area: date_util;
+
+    max-width: 100%; 
+    white-space: nowrap;
+    overflow-x: auto;  /* scrollbar vertical când conținutul depășește înălțimea */
+    overflow-y: hidden;
+    padding: 15px;
+    
+    border-radius: 10px;
+    
+}
+
+#date_site_server{
+    grid-area: date_site_server;
+
+    max-width: 100%; 
+    white-space: nowrap;
+    overflow-x: auto;  /* scrollbar vertical când conținutul depășește înălțimea */
+    overflow-y: hidden;
+    padding: 15px;
+    
+    border-radius: 10px;
+    
+}
+
+
+
+@media screen and (max-width:1200px) {
+    html{
+        font-size: 14px;
+    }
+    body{
+        font-size: 1.4rem;
+    }
+
+    .video-faq-container {
+        flex-direction: column;  /* elementele stau unul sub altul */
+    }
+    
+    .container-iframe, .faq {
+        max-width: 100%;
+    }
+    
+    
+}
+@media screen and (max-width:800px) {
+    #grid_pagina{
+        display: block;
+    }
+    html{
+        font-size: 10px;
+    }
+    body{
+        font-size: 1.3rem;
+    }
+
+    .video-faq-container {
+        flex-direction: column;  /* elementele stau unul sub altul */
+    }
+    
+    .container-iframe, .faq {
+        max-width: 100%;
+    }
+
+    /* Scroll tabel  */
+    .table-container  table{
+        width: 800px;
+        min-width: 600px;
+    }
+
+    /* Dezactivare animatii */
+    nav a:hover{
+        background-color: var(--border-color);
+        color: var(--accent-color);
+    }
+
+    .taburi-iframe a:hover {
+        background-color: var(--border-color); 
+    }
+
+    tbody tr:hover {
+        background-color: white; 
+    }
+
+    tbody td:hover {
+        background-color: white; 
+    }
+}
+

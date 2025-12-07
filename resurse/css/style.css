@@ -1,0 +1,369 @@
+:root {
+    --primary-color: #63C8BA;  /* Culoare principală */
+    --secondary-color: #689D96; /* Culoare secundară */
+    --accent-color: #50F2DD; /* Highlight */
+    --text-color: #5F7370; /* Text */
+    --text-color2: #ffffff; /* Text deschis */
+    --border-color: #3A4846; /* Borduri */
+}
+
+
+body {
+    background-color: var(--border-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    transition: font-size 0.3s ease;
+}
+
+
+
+
+header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+header h1{
+    text-align: center;
+}
+
+nav ul {
+    background-color: var(--border-color);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+nav a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: background-color 0.3 ease, transform 0.2 ease;
+}
+
+nav a:hover{
+    background-color: var(--text-color);
+    color: var(--primary-color);
+}
+
+
+
+aside {
+    background-color: var(--border-color);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+section > section {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: inherit; 
+}
+
+section{
+    background-color: white;
+    color: var(--border-color);
+    padding: 15px;
+    border-radius: 5px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    text-decoration-color: var(--text-color);
+}
+
+
+/* Iframe */
+
+.video-faq-container {
+    display: flex; /* Așează elementele una lângă alta */
+    gap: 20px; /* Spațiu între video și FAQ */
+    align-items: flex-start; /* Aliniere sus */
+}
+
+.container-iframe {
+    flex: 2; /* Ocupă 2 părți din spațiu */
+    max-width: 100%;
+}
+
+.faq {
+    flex: 1; /* Ocupă 1 parte din spațiu */
+    max-width: 800px; /* Lățime maximă pentru întrebări */
+    background: var(--text-color); /* Fundal deschis */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.z-pattern {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: linear-gradient(to right, rgba(0,0,0,0.7), transparent), var(--border-color);
+    background-size: cover;
+    color: white;
+}
+
+.text {
+    max-width: 50%;
+}
+
+.text h1 {
+    font-size: 2em;
+}
+
+.text p {
+    font-size: 1.2em;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.image {
+    flex: 1; /* Ocupă tot spațiul disponibil în dreapta */
+    display: flex;
+    justify-content: flex-end; /* Aliniază imaginea la dreapta */
+}
+
+.image img {
+    max-width: 100%; /* Se mărește automat fără să depășească containerul */
+    height: auto; /* Păstrează proporțiile */
+    object-fit: cover; /* Se asigură că imaginea nu e distorsionată */
+}
+
+.container-iframe {
+    display: flex;  /* Activează flexbox pentru layout orizontal */
+    align-items: flex-start; 
+}
+
+.taburi-iframe a {
+    display: flex;
+    padding: 10px 15px;
+    margin: 5px;
+    flex-direction: column; 
+    align-items: flex-start; 
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--border-color); 
+    border-radius: 5px;
+    width: 150px; 
+    text-align: center; 
+    word-wrap: break-word;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.taburi-iframe a:hover {
+    background-color: var(--primary-color); 
+}
+
+iframe {
+    flex: 1; 
+    max-width: 560px; 
+    max-height: 315px;
+}
+
+/* Tabel */
+
+.table-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: auto; 
+    border-radius: 10px;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption {
+    caption-side: top; 
+    font-style: italic;
+    padding: 5px;
+    border-bottom: 5px;
+    background-color: var(--secondary-color);
+}
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    text-align: center;
+}
+
+thead {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f8f8f8; 
+}
+
+tbody tr:nth-child(even) {
+    background-color: #e0e0e0; 
+}
+
+
+tbody tr:hover {
+    background-color: var(--secondary-color); 
+    transition: background-color 0.3s ease;
+}
+
+tbody td:hover {
+    background-color: var(--primary-color); 
+}
+
+
+tfoot {
+    background-color: var(--secondary-color);
+    font-weight: bold;
+}
+
+
+/* Calendar și Anunțuri */
+
+.calendar-container, .anunturi-container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-container table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.calendar-container th, 
+.calendar-container td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.calendar-container th {
+    background: var(--secondary-color);
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background: #e9ecef;
+}
+
+tbody tr:hover {
+    background: #d1ecf1;
+    transition: background 0.3s ease-in-out;
+}
+
+.anunturi-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.anunturi-container ul li {
+    background: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-left: 5px solid var(--primary-color);
+    transition: background 0.3s ease-in-out;
+}
+
+.anunturi-container ul li:hover {
+    background: var(--secondary-color);
+}
+
+/* Back to Top */
+
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 1000;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    border-radius: 100%;
+}
+
+.scroll-top:hover {
+    opacity: 1;
+    background: linear-gradient(to bottom, var(--border-color) 0%, var(--secondary-color) 50%, var(--border-color) 100%);
+}
+
+/* Cercul dashed rotativ */
+.scroll-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px dashed var(--text-color2);
+    border-radius: 50%;
+    
+    transition: transform 0.7s ease, background 0.5s ease;
+    box-sizing: border-box;
+}
+
+.scroll-top:hover::before {
+    
+    transform: rotate(360deg);
+}
+
+/* Săgeata fixă */
+.scroll-top .arrow {
+    position: relative; /* deasupra pseudo-elementului */
+    font-size: 24px;
+    color: var(--text-color2);
+    pointer-events: none; /* nu afectează hover-ul */
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+footer section{
+    background-color: var(--border-color);
+}
+
+.footer-map {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-map iframe {
+    width: 100%;
+    height: 220px;
+    border-radius: 10px;
+    border: none;
+}

@@ -3,20 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Oancea Iustin-Alexandru">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="mașini, autoturisme, vehicule, vânzare auto, recenzii auto">
     <meta name="description" content="Site de prezentare și vânzare a mașinilor noi și second-hand, recenzii și servicii auto">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <title>Mașini - Catalog și Recenzii Auto</title>
+    
+    <title>CarSW</title>
 
-    <link rel="icon" type="image/png" href="/resurse/.ico/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/resurse/.ico/favicon.svg" />
-<link rel="shortcut icon" href="/resurse/.ico/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/resurse/.ico/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="CarSW" />
-<link rel="manifest" href="/resurse/.ico/site.webmanifest" />
+    <link rel="icon" type="image/png" href="./resurse/imagini/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./resurse/imagini/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./resurse/imagini/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="CarSW" />
+    <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest" />
+
+<link rel="stylesheet" type = "text/css" href="./resurse/css/style.css">
+<link rel="stylesheet" type = "text/css" href="./resurse/css/general.css">
+
 </head>
+
+
 <body>
-    <header>
+    <header><!--Meniul-->
         <h1>Mașini - Catalog și Recenzii Auto</h1>
         <nav>
             <ul>
@@ -34,42 +41,347 @@
     </header>
     
     <main>
-        <section id="noutati">
-            <h2>Noutăți Auto</h2>
-            <article>
-                <h3>Ultimele lansări</h3>
-                <p><b>Mașina electrică</b> a anului 2025 a fost anunțată...</p>
-            </article>
-        </section>
-        
-        <section id="recenzii">
-            <h2>Recenzii</h2>
-            <figure>
-                <picture>
-                    <source media="(max-width: 600px)" srcset="resurse/imagini/Dacia_Logan.png">
-                    <source media="(max-width: 1024px)" srcset="resurse/imagini/Suzuki_S_cross.png">
-                    <img src="resurse/imagini/G_class.png" alt="Imagine cu o mașină">
-                </picture>
-                <figcaption>Noua generație de mașini de teren</figcaption>
-            </figure>
-        </section>
-        
-        <aside>
-            <h2>Promoții</h2>
-            <details>
-                <summary>Reduceri speciale la mașini electrice</summary>
-                <p>Până la <strong>20%</strong> discount pentru modelele noi.</p>
-            </details>
-        </aside>
+        <a href="#top" class="scroll-top" title="Back to Top">
+            <span class="arrow">&#8593;</span>
+        </a>
+        <div id = "grid_pagina">
+            <section id="prezentare" class="z-pattern">
+                <div class="text">
+                    <h1>Găsește Mașina Perfectă!</h1>
+                    <p>Cele mai bune oferte la mașini noi și second-hand. Alege modelul potrivit pentru tine!</p>
+                    <a href="#oferte" class="btn">Vezi Ofertele</a>
+                </div>
+                <div class="image">
+                    <img src="./resurse/imagini/Bmw_M4.png" alt="Mașină de lux">
+                </div>
+            </section>
+
+            <section id = "continut">
+                <h2>Noutăți Auto</h2>
+                <article>
+                    <h3>Ultimele lansări</h3>
+                    <p><b>Mașina electrică</b> a anului 2025 a fost anunțată...</p>
+                </article>
+                <div id="recenzii"><!--Imaginea cu masinile-->
+                
+                    <h3>Recenzii</h3>
+                    <figure>
+                        <picture>
+                            <source media="(max-width: 800px)" srcset="resurse/imagini/Dacia_Logan.png">
+                            <source media="(max-width: 1024px)" srcset="resurse/imagini/Suzuki_S_cross.png">
+                            <img src="resurse/imagini/G_class.png" alt="Imagine cu o mașină">
+                        </picture>
+                        <figcaption>Noua generație de mașini de teren</figcaption>
+                    </figure>
+                    <div class="video-faq-container">
+
+                        <!-- Secțiunea Video -->
+                        <div class="container-iframe">
+                            <div class="taburi-iframe">
+                                <a href="https://www.youtube.com/embed/Z-s0_D8hmBY?si=hwn6Ksvwr6VWCioz" target="ifr-video">Test Drive Tesla Model S</a>
+                                <a href="https://www.youtube.com/embed/-E2xV3yd1hA?si=2YWPg_3aXKl19JGQ" target="ifr-video">Cum să îți întreții mașina</a>
+                                <a href="https://www.youtube.com/embed/tg-AQUISABU?si=d8mRD7LiXUZBPVYl" target="ifr-video">Top 10 mașini sport 2024</a><br/>
+                            </div>
+                    
+                            <iframe name="ifr-video" width="560" height="315" 
+                                    src="https://www.youtube.com/embed/0gHV9v4wjKQ?si=ii_CQY1vyBVnq-gZ" 
+                                    frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    
+                        <!-- Secțiunea Întrebări Frecvente -->
+                        <div class="faq">
+                            <aside>
+                                <h2>Întrebări Frecvente:</h2>
+            
+                                <details>
+                                    <summary>Care sunt avantajele unei mașini electrice?</summary>
+                                    <p>Mașinile electrice au costuri mai mici de întreținere, sunt mai ecologice și oferă o experiență de condus mai silențioasă.</p>
+                                </details>
+            
+                                <details>
+                                    <summary>Oferiți finanțare pentru achiziția unui vehicul?</summary>
+                                    <p>Da, colaborăm cu mai multe bănci și instituții financiare pentru a oferi soluții flexibile de finanțare.</p>
+                                </details>
+            
+                                <details>
+                                    <summary>Cât durează livrarea unei mașini noi?</summary>
+                                    <p>În funcție de model și disponibilitate, livrarea poate dura între <strong>7 și 30 de zile</strong>.</p>
+                                </details>
+            
+                                <details>
+                                    <summary>Ce garanție oferă producătorii?</summary>
+                                    <p>Majoritatea producătorilor oferă o garanție de <strong>3 până la 7 ani</strong>, în funcție de marcă și model.</p>
+                                </details>
+            
+                                <details>
+                                    <summary>Care sunt cele mai economice mașini disponibile?</summary>
+                                    <p>Modelele cu consum redus de combustibil includ Toyota Yaris Hybrid, Renault Clio E-Tech și Volkswagen Polo TDI.</p>
+                                </details>
+            
+                                <details>
+                                    <summary>Este posibil un test drive înainte de achiziție?</summary>
+                                    <p>Da! Poți programa un test drive completând formularul de pe site sau vizitând showroom-ul nostru.</p>
+                                </details>
+            
+                                <details>
+                                    <summary>Care sunt cele mai sigure mașini din 2024?</summary>
+                                    <p>Conform testelor Euro NCAP, cele mai sigure mașini includ Volvo XC60, Tesla Model Y și Mercedes-Benz EQS.</p>
+                                </details>
+            
+                                <details>
+                                    <summary>Ce documente sunt necesare pentru a cumpăra o mașină?</summary>
+                                    <p>Ai nevoie de buletin, permis de conducere (opțional) și, pentru achiziții în leasing, adeverință de venit.</p>
+                                </details>
+            
+                                <details>
+                                    <summary>Oferiți servicii de buy-back?</summary>
+                                    <p>Da, poți aduce mașina ta veche și îți oferim o evaluare pentru a o folosi ca avans la achiziția unui nou vehicul.</p>
+                                </details>
+                            </aside>
+                        </div>
+                    </div>
+
+                    <a href="./resurse/pdf/manual_utilizare_renault.pdf" download="Ghid_Renault.pdf">Descarca aici</a>
+                </div>
+
+
+            </section>
+
+            <section id = "tabel">
+                
+                <div class="table-container">
+                    <table>
+                        <caption>Top 4 cele mai vândute mașini</caption>
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Producător</th>
+                                <th>Preț (€)</th>
+                                <th>Vânzări 2024</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Model S</td>
+                                <td>Tesla</td>
+                                <td rowspan="2">85,000</td>
+                                <td>25,000</td>
+                            </tr>
+                            <tr>
+                                <td>Model 3</td>
+                                <td>Tesla</td>
+                                <td>40,000</td>
+                            </tr>
+                            <tr>
+                                <td>BMW M4</td>
+                                <td>BMW</td>
+                                <td>75,000</td>
+                                <td>18,000</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Total vânzări</td>
+                                <td colspan="2">83,000</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">Date actualizate în martie 2024</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+            </section>
+
+            <section id="calendar" class="calendar-container">
+                <!-- <h2>Calendar Evenimente</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Luni</th><th>Marți</th><th>Miercuri</th><th>Joi</th><th>Vineri</th><th>Sâmbătă</th><th>Duminică</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        <tr>
+                            <td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+                        </tr>
+                        <tr>
+                            <td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
+                        </tr>
+                        <tr>
+                            <td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td>
+                        </tr>
+                    </tbody>
+                </table> -->
+                
+                <p>
+                    Lorem Ipsum
+                    "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                    "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+
+                    freestar
+
+                    freestar
+                    What is Lorem Ipsum?
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                    Why do we use it?
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+
+                    Where does it come from?
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+
+                    Where can I get some?
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                </p>    
+            
+
+            </section>
+            
+            <section id="anunturi" class="anunturi-container">
+                <!-- <h2>Anunțuri Importante</h2>
+                <ul>
+                    <li><strong>[12 Martie]</strong> Reduceri la modele electrice până la 20%!</li>
+                    <li><strong>[18 Martie]</strong> Lansarea noului model BMW iX3!</li>
+                    <li><strong>[25 Martie]</strong> Eveniment de test-drive pentru mașini hibride.</li>
+                </ul> -->
+
+                <p>Lorem Ipsum
+                    "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                    "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+
+                    freestar
+
+                    freestar
+                    What is Lorem Ipsum?
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                    Why do we use it?
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+
+                    Where does it come from?
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+
+                    Where can I get some?
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                </p>
+            </section>
+
+            <section id = "lista_util">
+                <p>
+                    Lorem Ipsum
+                    "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                    "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+
+                    freestar
+
+                    freestar
+                    What is Lorem Ipsum?
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                    Why do we use it?
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+
+                    Where does it come from?
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+
+                    Where can I get some?
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                </p>
+            </section>
+
+            <section id = "date_util">
+                <p>
+                    Lorem Ipsum
+                    "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                    "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+
+                    freestar
+
+                    freestar
+                    What is Lorem Ipsum?
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                    Why do we use it?
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+
+                    Where does it come from?
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+
+                    Where can I get some?
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                </p>
+            </section>
+
+            <section id = "date_site_server">
+                <p>
+                    Lorem Ipsum
+                    "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                    "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+
+                    freestar
+
+                    freestar
+                    What is Lorem Ipsum?
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                    Why do we use it?
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+
+                    Where does it come from?
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+
+                    Where can I get some?
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                </p>
+            </section>
+            
+        </div>
+
+    
+
     </main>
+
     
     <footer>
-        <address>
-            <p>Telefon: <a href="tel:+40775319684">+40 775319684</a></p>
-            <p>Adresa: <a href="https://maps.google.com?q=Facultatea+de+Matematica+si+Informatica" target="_blank">București, Str. Academiei, Nr. 14</a></p>
-            <p>Email: <a href="mailto:oanceaiustin25@gmail.com">oanceaiustin25@gmail.com</a></p>
-            <p>WhatsApp: <a href="https://wa.me/40775319684">Chat pe WhatsApp</a></p>
-        </address>
+        <section id = "contact">
+            <address>
+                <p>Telefon: <a href="tel:+40775319684">+40 775319684</a></p>
+                <p>Adresa: <a href="https://maps.google.com?q=Facultatea+de+Matematica+si+Informatica" target="_blank">București, Str. Academiei, Nr. 14</a></p>
+                <p>Email: <a href="mailto:oanceaiustin25@gmail.com">oanceaiustin25@gmail.com</a></p>
+                <p>WhatsApp: <a href="https://wa.me/40775319684">Chat pe WhatsApp</a></p>
+                <a href="#"> Link către început</a>
+            </address>
+
+            <div class="footer-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2711.633364756301!2d26.097011776218338!3d44.43553547107579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e1!3m2!1sro!2sro!4v1765134293485!5m2!1sro!2sro"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
         <small>&copy; <time datetime="2025-03-04">4 martie 2025</time> - Toate drepturile rezervate.</small>
     </footer>
 </body>
