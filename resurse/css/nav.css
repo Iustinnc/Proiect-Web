@@ -3,7 +3,7 @@
 }
 
 nav {
-  background-color: var(--culoare-deschisa);
+  background-color: var(--border-color);
   --inaltime-meniu:30px;
   --latime-buton:100px;
   height: var(--inaltime-meniu);

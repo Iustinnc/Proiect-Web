@@ -11,7 +11,7 @@
 body {
     background-color: var(--border-color);
     color: var(--text-color);
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     transition: font-size 0.3s ease;
 }
@@ -31,24 +31,6 @@ header {
 header h1{
     text-align: center;
 }
-
-nav ul {
-    background-color: var(--border-color);
-    padding: 15px;
-    border-radius: 5px;
-}
-
-nav a {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: background-color 0.3 ease, transform 0.2 ease;
-}
-
-nav a:hover{
-    background-color: var(--text-color);
-    color: var(--primary-color);
-}
-
 
 
 aside {
@@ -84,10 +66,7 @@ section{
     align-items: flex-start; /* Aliniere sus */
 }
 
-.container-iframe {
-    flex: 2; /* Ocupă 2 părți din spațiu */
-    max-width: 100%;
-}
+
 
 .faq {
     flex: 1; /* Ocupă 1 parte din spațiu */
@@ -144,95 +123,144 @@ section{
 }
 
 .container-iframe {
-    display: flex;  /* Activează flexbox pentru layout orizontal */
-    align-items: flex-start; 
+    display: flex; 
+    align-items: center;
+    width: 100%; 
 }
 
-.taburi-iframe a {
+.taburi-iframe {
+    order: 2; /* Pune butoanele în dreapta */
     display: flex;
-    padding: 10px 15px;
-    margin: 5px;
-    flex-direction: column; 
-    align-items: flex-start; 
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    background-color: var(--border-color); 
-    border-radius: 5px;
-    width: 150px; 
-    text-align: center; 
-    word-wrap: break-word;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.taburi-iframe a:hover {
-    background-color: var(--primary-color); 
+    flex-direction: column;
+    gap: 10px; /* Spațiu între tab-uri */
 }
 
 iframe {
-    flex: 1; 
-    max-width: 560px; 
-    max-height: 315px;
+    order: 1; /* Pune iframe-ul primul (în stânga) */
+    flex: 1;
+    width: 100%;
+    min-height: 350px;
+    border: 3px solid var(--primary-color);
+    border-radius: 10px; /* Rotunjim tot iframe-ul */
+    background-color: var(--border-color);
+    z-index: 1; /* Iframe-ul stă dedesubt */
 }
+
+.taburi-iframe a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--secondary-color);
+    
+    /* Forma de "Tab" lipit de iframe - rotunjim doar exteriorul (dreapta) */
+    border-radius: 0 15px 15px 0; 
+    
+    /* Tragem butoanele puțin spre stânga ca să se lipească/suprapună cu marginea iframe-ului */
+    margin-left: -5px; 
+    z-index: 10; /* Tab-urile stau PESTE chenarul iframe-ului */
+    position: relative;
+    
+    /* Lățime inițială a tab-ului */
+    width: 140px; 
+    box-shadow: 3px 2px 5px rgba(0,0,0,0.2);
+    
+    /* Efectul glisant de tranziție */
+    transition: width 0.3s ease, background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.taburi-iframe a:hover {
+    background-color: var(--primary-color);
+    width: 160px; /* Butonul se lungește în afară */
+    padding-left: 20px; /* Textul glisează ușor spre dreapta */
+}
+
+
 
 /* Tabel */
 
 .table-container {
     width: 100%;
     max-width: 100%;
-    overflow-x: auto;
+    overflow-x: auto; /* Bifează scroll-ul orizontal pe mobil */
     margin: auto; 
     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Dă un efect frumos de "card" întregului tabel */
+    background-color: white;
 }
 
-.table-container table {
+table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: collapse; 
     border-spacing: 0;
 }
 
+/* 1. Capțiune poziționată sub tabel */
 caption {
-    caption-side: top; 
+    caption-side: bottom; 
     font-style: italic;
-    padding: 5px;
-    border-bottom: 5px;
-    background-color: var(--secondary-color);
+    padding: 15px;
+    font-weight: bold;
+    color: var(--secondary-color);
 }
 
+/* --- SETĂRI BORDERE BAZĂ --- */
 th, td {
-    border: 1px solid var(--border-color);
-    padding: 10px;
+    /* Folosim un border orizontal foarte fin și deschis ca să nu aglomereze vizual */
+    border-bottom: 1px solid rgba(58, 72, 70, 0.15); 
+    padding: 12px 15px; /* Mai mult spațiu ca textul să respire */
     text-align: center;
+    /* Aplicăm tranziția direct pe celule pentru un efect fluid */
+    transition: box-shadow 0.5s ease, background-color 0.5s ease;
 }
 
-thead {
+/* 2. Culori alternate pentru borderele verticale */
+th:nth-child(odd), td:nth-child(odd) {
+    border-right: 2px solid var(--border-color);
+}
+th:nth-child(even), td:nth-child(even) {
+    border-right: 2px solid var(--text-color);
+}
+
+/* Ștergem borderul de pe ultima coloană ca să nu taie marginea din dreapta a tabelului */
+th:last-child, td:last-child {
+    border-right: none; 
+}
+
+/* 3. Grosimea borderului thead/tbody și tbody/tfoot (de 3 ori mai mare = 3px) */
+thead th {
     background-color: var(--secondary-color);
     color: white;
+    border-bottom: 3px solid var(--border-color); /* Separare clară de corp */
+    border-right-color: rgba(255,255,255,0.2); /* Liniile din antet le facem mai fine */
 }
 
-tbody tr:nth-child(odd) {
-    background-color: #f8f8f8; 
-}
-
-tbody tr:nth-child(even) {
-    background-color: #e0e0e0; 
-}
-
-
-tbody tr:hover {
-    background-color: var(--secondary-color); 
-    transition: background-color 0.3s ease;
-}
-
-tbody td:hover {
-    background-color: var(--primary-color); 
-}
-
-
-tfoot {
+tfoot td {
     background-color: var(--secondary-color);
+    color: white;
     font-weight: bold;
+    border-top: 3px solid var(--border-color); /* Separare clară de corp */
+    border-right-color: rgba(255,255,255,0.2);
+}
+
+/* Zebră mai elegantă (nuanțe mai deschise care nu distrag atenția) */
+tbody tr:nth-child(odd) {
+    background-color: #fdfdfd; 
+}
+tbody tr:nth-child(even) {
+    background-color: #f4f7f6; 
+}
+
+/* 4. Animația de Hover pe rând */
+/* Când vii pe rând (tr), acționăm asupra celulelor (td) din el */
+tbody tr:hover td {
+    background-color: #ffffff; 
+    
+    /* În loc de un negru murdar, folosim o nuanță transparentă din culoarea ta secundară. 
+       Arată ca o lumină (glow) care umple rândul treptat! */
+    box-shadow: inset 0 0 15px 3px rgba(104, 157, 150, 0.4); 
 }
 
 
@@ -306,7 +334,7 @@ tbody tr:hover {
     cursor: pointer;
     opacity: 0.6;
     transition: opacity 0.3s ease;
-    border-radius: 100%;
+    border-radius: 50%;
 }
 
 .scroll-top:hover {
@@ -342,6 +370,36 @@ tbody tr:hover {
     pointer-events: none; /* nu afectează hover-ul */
 }
 
+/* =========================================
+   Bonus MathML (Stilizare elemente separate)
+   ========================================= */
+.formula-bonus {
+    font-size: 2rem; /* Dimensiune generală mai mare */
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+
+.formula-bonus mi {
+    color: var(--primary-color);
+    font-style: italic; /* Italicizare cerută în bonus */
+    font-weight: bold;  /* Îngroșare cerută în bonus */
+}
+
+
+.formula-bonus mn {
+    color: var(--accent-color);
+    font-size: 1.2em; /* Numerele un pic mai mari */
+}
+
+
+.formula-bonus mo {
+    color: white;
+    margin: 0 5px;
+}
+
 /* Footer */
 
 footer {
@@ -366,4 +424,112 @@ footer section{
     height: 220px;
     border-radius: 10px;
     border: none;
+}
+
+/* 1. Ascundem elementele adăugate anterior pentru ecran (sa nu ne strice designul) */
+#banner-print, #watermark {
+    display: none;
+}
+
+@media print {
+    /* Setăm marginile paginilor fizice stânga/dreapta */
+    @page :left {
+        margin-left: 3cm;
+        margin-right: 1cm;
+    }
+    @page :right {
+        margin-right: 3cm;
+        margin-left: 1cm;
+    }
+
+    /* Activăm elementele de print */
+    #banner-print, #watermark {
+        display: block;
+    }
+
+    /* 2. Banner-ul de pe prima pagină */
+    /* Deși e în footer (în HTML), position: absolute îl mută pe prima pagină! */
+    #banner-print {
+        position: absolute;
+        top: 25cm; /* O pagină A4 are aprox 29.7cm. Îl plasăm jos pe prima pagină */
+        left: 15%;
+        width: 70%;
+        text-align: center;
+        border: 4px inset black;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    /* 3. Watermark-ul repetitiv pe fiecare pagină */
+    /* position: fixed în printare repetă elementul pe FIECARE foaie fizică! */
+    #watermark {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 4cm;
+        height: 1cm;
+        border: 3px solid black;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: bold;
+        opacity: 0.4;
+        
+        /* Setăm font-ul mic pentru a încăpea 2 rânduri într-un singur cm înălțime */
+        font-size: 0.35cm; 
+        line-height: 0.45cm; 
+        background-color: white; /* Asigură vizibilitatea peste alte elemente */
+    }
+
+    /* 4. Ascunderea elementelor media și redundante */
+    img, video, iframe, figure, picture, .scroll-top, .hamburger-menu {
+        display: none !important;
+    }
+
+    /* 5. Transformăm Grid-ul în Block pentru a nu tăia secțiunile pe jumătate */
+    #grid_pagina, .container-iframe {
+        display: block !important;
+    }
+
+    /* 6. Toate linkurile devin text normal */
+    a {
+        color: black !important;
+        text-decoration: none !important;
+    }
+
+    /* 7. Meniul: Listă verticală, fără submeniuri */
+    .main-nav {
+        /* Page break DUPĂ meniu */
+        break-after: page; 
+        page-break-after: always;
+    }
+    .main-nav .menu-list {
+        display: block !important;
+        background: none !important;
+    }
+    .main-nav .menu-list > li {
+        display: block !important;
+        border: none !important;
+    }
+    .main-nav .menu-list > li > a {
+        text-align: left !important;
+        padding: 5px 0 !important;
+        font-size: 14pt !important;
+    }
+    /* Ascundem submeniurile complet */
+    .main-nav .submenu {
+        display: none !important; 
+    }
+
+    /* 8. H1 Centrat */
+    h1 {
+        text-align: center !important;
+        margin-top: 0;
+    }
+
+    /* 9. Page break ÎNAINTE de footer */
+    footer {
+        break-before: page;
+        page-break-before: always;
+        position: relative; /* Resetează contextul dacă e nevoie */
+    }
 }

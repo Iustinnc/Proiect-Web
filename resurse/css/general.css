@@ -3,12 +3,14 @@
     background-color: lightyellow;
 } */
 
-#grid_pagina{
+#grid_pagina {
     display: grid;
-    grid-template-areas: "  prezentare   prezentare    prezentare       prezentare"
-                         "   continut     continut      continut         continut"
-                         "   calendar      tabel         tabel           anunturi"
-                         "  lista_util   date_util   date_site_server  date_site_server";
+    grid-template-areas:
+        "prezentare prezentare prezentare       prezentare"
+        "lista_util date_util  date_util        date_site_server"
+        "calendar   calendar   tabel            tabel"
+        "anunturi   anunturi   tabel            tabel"
+        "continut   continut   continut         continut";
 
     background-color: var(--border-color);
     color: var(--secondary-color);
@@ -16,157 +18,243 @@
     border-radius: 5px;
     margin: 15px;
 
-    grid-template-columns: minmax(200px, 1fr) minmax(250px, 1.5fr) minmax(250px, 1.5fr) minmax(200px, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
-    
+
 }
 
 
 
-#prezentare{
+#prezentare {
     grid-area: prezentare;
 }
 
-#continut{
+#continut {
     grid-area: continut;
 }
 
-#tabel{
+#tabel {
     grid-area: tabel;
 }
 
-#calendar{
+#calendar {
     grid-area: calendar;
-    
-    max-width: 100%;           /* containerul nu depășește viewport-ul */
-    overflow-x: auto;          /* scroll orizontal */
-    overflow-y: hidden;        /* fără scroll vertical */
+
+    max-width: 100%;
+    /* containerul nu depășește viewport-ul */
+    max-height: 250px;
+    overflow-x: hidden;
+    /* scroll orizontal */
+    overflow-y: auto;
+    /* fără scroll vertical */
     background-color: var(--border-color);
     border-radius: 10px;
     padding: 15px;
     box-sizing: border-box;
     color: white;
 
-    white-space: nowrap;
+    white-space: normal;
 }
 
 
 
 
-#anunturi{
+#anunturi {
     grid-area: anunturi;
 
-    
-    max-width: 100%; 
-    white-space: nowrap;
-    overflow-x: auto;  /* scrollbar vertical când conținutul depășește înălțimea */
-    overflow-y: hidden;
+
+    max-width: 100%;
+    max-height: 250px;
+    white-space: normal;
+    overflow-x: hidden;
+    /* scrollbar vertical când conținutul depășește înălțimea */
+    overflow-y: auto;
     padding: 15px;
     background-color: var(--border-color);
     border-radius: 10px;
-    color : white;
+    color: white;
 }
 
-#lista_util{
+#lista_util {
     grid-area: lista_util;
 
-    max-width: 100%; 
-    white-space: nowrap;
-    overflow-x: auto;  /* scrollbar vertical când conținutul depășește înălțimea */
-    overflow-y: hidden;
+    max-width: 100%;
+    max-height: 250px;
+    white-space: normal;
+    overflow-x: hidden;
+    /* scrollbar vertical când conținutul depășește înălțimea */
+    overflow-y: auto;
     padding: 15px;
-    
+
     border-radius: 10px;
-    
+
 }
 
-#date_util{
+#date_util {
     grid-area: date_util;
 
-    max-width: 100%; 
-    white-space: nowrap;
-    overflow-x: auto;  /* scrollbar vertical când conținutul depășește înălțimea */
-    overflow-y: hidden;
+    max-width: 100%;
+    max-height: 250px;
+    white-space: normal;
+    overflow-x: hidden;
+    /* scrollbar vertical când conținutul depășește înălțimea */
+    overflow-y: auto;
     padding: 15px;
-    
+
     border-radius: 10px;
-    
+
 }
 
-#date_site_server{
+#date_site_server {
     grid-area: date_site_server;
 
-    max-width: 100%; 
-    white-space: nowrap;
-    overflow-x: auto;  /* scrollbar vertical când conținutul depășește înălțimea */
-    overflow-y: hidden;
+    max-width: 100%;
+    max-height: 250px;
+    white-space: normal;
+    overflow-x: hidden;
+    /* scrollbar vertical când conținutul depășește înălțimea */
+    overflow-y: auto;
     padding: 15px;
-    
+
     border-radius: 10px;
-    
+
+}
+
+#calendar,
+#anunturi,
+#lista_util,
+#date_util {
+    font-size: 1rem;
+}
+
+#calendar h2,
+#anunturi h2,
+#lista_util h2,
+#date_util h2 {
+    font-size: 1.5srem;
+    margin-bottom: 10px;
 }
 
 
 
 @media screen and (max-width:1200px) {
-    html{
+
+    /* 1. ADAUGĂ ASTA: Redefinim grid-ul pentru tablete (2 coloane în loc de 4) */
+    #grid_pagina {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "prezentare   prezentare"
+            "lista_util   date_site_server"
+            "date_util    date_util"
+            "calendar     tabel"
+            "anunturi     tabel"
+            "continut     continut";
+    }
+
+    html {
         font-size: 14px;
     }
-    body{
+
+    body {
         font-size: 1.4rem;
     }
 
     .video-faq-container {
-        flex-direction: column;  /* elementele stau unul sub altul */
+        flex-direction: column;
+        /* elementele stau unul sub altul */
     }
-    
-    .container-iframe, .faq {
+
+    .container-iframe,
+    .faq {
         max-width: 100%;
     }
-    
-    
 }
+
+
 @media screen and (max-width:800px) {
-    #grid_pagina{
+
+    *:not(.main-nav):not(.main-nav *) {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    #grid_pagina {
         display: block;
     }
-    html{
+
+    html {
         font-size: 10px;
     }
-    body{
+
+    body {
         font-size: 1.3rem;
     }
 
     .video-faq-container {
-        flex-direction: column;  /* elementele stau unul sub altul */
-    }
-    
-    .container-iframe, .faq {
-        max-width: 100%;
+        flex-direction: column;
+        /* elementele stau unul sub altul */
     }
 
-    /* Scroll tabel  */
-    .table-container  table{
+    /* Resetări pentru zona de iframe pe mobil */
+    .container-iframe {
+        flex-direction: row;
+        /* Pune butoanele și iframe-ul în coloană */
+        align-items: center;
+    }
+
+    iframe {
+        order: 1;
+        /* Iframe-ul cade jos */
+        flex: 1;
+        /* Ia tot spațiul disponibil rămas */
+        min-width: 0;
+        /* ESENȚIAL: îi permite iframe-ului să se micșoreze sub dimensiunea lui default */
+        height: 200px;
+    }
+
+    /* Pe mobil, mutăm butoanele deasupra iframe-ului */
+    .taburi-iframe {
+        order: 2;
+        flex-direction: column;
+        /* Unele sub altele */
+        width: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .taburi-iframe a {
+        width: 90px;
+        /* Lățime mult mai mică pentru mobil */
+        padding: 10px 5px;
+        /* Padding mai mic pentru a economisi spațiu */
+        font-size: 10px;
+        /* Text mai mic */
+        border-radius: 0 10px 10px 0;
+        /* Păstrăm designul de tab lipit de margine */
+        margin-left: -5px;
+        text-align: center;
+        /* Reducem umbra ca să nu aglomereze vizual */
+        box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Anulăm extinderea la hover pe mobil ca să nu strice ecranul */
+    .taburi-iframe a:hover {
+        width: 90px;
+        padding: 10px 5px;
+    }
+
+
+    .table-container table {
         width: 800px;
         min-width: 600px;
     }
 
-    /* Dezactivare animatii */
-    nav a:hover{
-        background-color: var(--border-color);
-        color: var(--accent-color);
-    }
-
-    .taburi-iframe a:hover {
-        background-color: var(--border-color); 
-    }
 
     tbody tr:hover {
-        background-color: white; 
+        background-color: white;
     }
 
     tbody td:hover {
-        background-color: white; 
+        background-color: white;
     }
 }
-

@@ -1,0 +1,330 @@
+// =======================================================
+// 1. Variabile SASS
+// =======================================================
+$transition-speed: 0.3s;
+$bar-width: 4px;
+
+// =======================================================
+// 2. Variabile CSS (Tema cromatică - cerință)
+// =======================================================
+body {
+    --menu-bg-dark: #222;
+    --menu-link-padding: 10px 15px;
+    --color-primary: #333;
+    --color-secondary: #000;
+    --color-text-light: #fff;
+    --color-hover-bg: #444;
+    --submenu-bg: #444;
+}
+
+// =======================================================
+// Animația de apariție pentru barele meniului Burger
+// =======================================================
+@keyframes aparitie-bare {
+    
+    0% {
+        opacity: 0;
+        transform: translateX(40px) rotate(180deg) scale(0.2);
+        background-color: transparent;
+    }
+    
+    50% {
+        opacity: 0.6;
+        transform: translateX(-10px) rotate(-20deg) scale(1.1);
+        background-color: var(--accent-color, #689D96); 
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0) scale(1);
+        background-color: var(--color-text-light);
+    }
+}
+
+// =======================================================
+// 3. Bloc repetitiv @extend (Cerință)
+// =======================================================
+%base-link {
+    display: block;
+    padding: var(--menu-link-padding);
+    text-decoration: none;
+    text-align: center;
+    color: var(--color-text-light);
+    background-color: var(--color-primary);
+    position: relative;
+    font-weight: bold;
+    transition: all $transition-speed ease;
+}
+
+// =======================================================
+// 4. Imbricare SASS (Nesting)
+// =======================================================
+.main-nav {
+    position: relative;
+    z-index: 1000;
+
+    // --- Buton Mobile (Hamburger) ---
+    .hamburger-menu {
+        display: none; // Ascuns pe desktop
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        padding: 0;
+        cursor: pointer;
+        z-index: 101;
+
+        .line {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: var(--color-text-light);
+            border-radius: 2px;
+            position: absolute;
+            left: 0;
+            transition: background-color $transition-speed ease;
+
+            animation: aparitie-bare 0.6s ease-out forwards;
+
+            &:nth-child(1) {
+                top: 0;
+            }
+
+            &:nth-child(2) {
+                top: 18px;
+                
+            }
+
+            &:nth-child(3) {
+                bottom: 0;
+            }
+        }
+    }
+
+    .menu-checkbox {
+        display: none; // Ascuns pe desktop
+    }
+
+    // --- Meniul Principal ---
+    .menu-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        background-color: var(--menu-bg-dark);
+        border-radius: 5px;
+
+        >li {
+            position: relative;
+            flex-grow: 1;
+
+            >a {
+                @extend %base-link;
+                font-size: 1rem;
+                overflow: hidden;
+
+                // CERINȚĂ: Dimensiunea textului crește treptat
+                &:hover {
+                    background-color: var(--color-hover-bg);
+                    font-size: 1.15rem; // Creșterea textului
+                }
+            }
+
+            // CERINȚĂ: Instrucțiune repetitivă @for
+            @for $i from 1 through 5 {
+                &:nth-child(#{$i})>a {
+                    // Adăugăm un mic delay pentru o intrare animată în viitor
+                    animation-delay: #{$i * 0.1}s;
+                }
+            }
+        }
+
+        // --- Submeniu ---
+        .menu-item-group {
+
+            // Afișăm submeniul la hover
+            &:hover>.submenu {
+                transform: scaleY(1);
+            }
+
+            .submenu {
+                position: absolute;
+                top: 100%; // CERINȚĂ: Scalare pornind de la granița de jos a butonului tată
+                left: 0;
+                width: 100%;
+                background-color: var(--submenu-bg);
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                // CERINȚĂ: Scalare pe verticală de la 0 la 1
+                transform: scaleY(0);
+                transform-origin: top;
+                transition: transform $transition-speed ease-out;
+
+                >li {
+                    width: 100%;
+
+                    >a {
+                        @extend %base-link;
+                        font-size: 0.95rem;
+                        background-color: transparent;
+                        overflow: hidden;
+
+                        // CERINȚĂ: ::before și ::after în degradé
+                        &::before,
+                        &::after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            top: 0; // Pornesc de la baza butonului
+                            width: $bar-width;
+                            height: 0; // Invizibile inițial
+                            background: linear-gradient(to bottom, var(--accent-color), var(--border-color)); // Degradé alb->negru
+                            transition: height $transition-speed ease;
+                        }
+
+                        &::before {
+                            left: 0;
+                        }
+
+                        &::after {
+                            right: 0;
+                        }
+
+                        &:hover {
+                            background-color: var(--color-hover-bg);
+                            font-size: 1rem; // Un mic efect de creștere și aici
+
+                            // Animăm barele la înălțimea completă
+                            &::before,
+                            &::after {
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .main-nav .menu-list {
+        >li>a {
+            padding: 15px 10px;
+            font-size: 0;
+
+            i {
+                font-size: 1.4rem;
+            }
+        }
+
+        .menu-item-group .submenu>li>a {
+            font-size: 0.95rem;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    
+    // 1. HEADER-ul este ancora
+    header {
+        display: flex;
+        align-items: center;
+        position: relative; // Ancora de care se prinde meniul derulant
+    }
+
+    .main-nav {
+        order: -1; // Aruncă butonul de burger în stânga
+        margin-right: 15px; // Spațiu între burger și textul din dreapta lui
+        position: static; // Eliberează lista din interior să ia tot ecranul
+
+        align-self: stretch;
+        display: flex;
+        align-items: center; /* Păstrează liniuțele centrate pe verticală în noul bloc */
+        padding: 0 20px; /* Adaugă spațiu frumos la stânga și la dreapta liniuțelor */
+        background-color: var(--submenu-bg); /* Tonul de gri dorit */
+        border-radius: 5px; /* Colțuri rotunjite pentru un aspect modern */
+
+        .hamburger-menu {
+            display: block;
+            cursor: pointer;
+
+            // Întârziem animația ca liniile să "zboare" una după alta
+            .line:nth-child(1) { animation-delay: 0s; }
+            .line:nth-child(2) { animation-delay: 0.15s; }
+            .line:nth-child(3) { animation-delay: 0.3s; }
+        }
+
+        // Hack-ul de bifare
+        .menu-checkbox:checked ~ .menu-list {
+            max-height: 600px; 
+        }
+
+        // 2. LISTA MENIULUI
+        .menu-list {
+            position: absolute;
+            top: 100%; // Cade fix sub header
+            left: 0;
+            width: 100%; // Ia toată lățimea ecranului
+            
+            // SECRETUL AICI: Le forțăm să stea unele sub altele!
+            display: flex;
+            flex-direction: column; 
+            
+            max-height: 0;
+            overflow: hidden;
+            background-color: var(--color-secondary);
+            transition: max-height 0.6s ease-in-out;
+            z-index: 1000; // Ne asigurăm că acoperă textul de sub el
+
+            > li {
+                width: 100%;
+                border-top: 1px solid var(--color-primary);
+                
+                > a {
+                    display: block; // Forțează linkul să ocupe tot rândul
+                    text-align: center; 
+                    font-size: 1.2rem; 
+                    padding: 15px 20px;
+                    transition: background-color $transition-speed ease;
+                    
+                    i { font-size: 1.2rem; margin-right: 8px; }
+
+                    &[href="#acasa"] {
+                        font-size: 0; 
+                        i { font-size: 1.5rem; margin-right: 0; }
+                    }
+
+                    &:hover { background-color: var(--color-hover-bg); }
+                }
+            }
+
+            // --- Submeniul pe mobil ---
+            .menu-item-group {
+                .submenu {
+                    position: relative; 
+                    top: 0;
+                    transform: scaleY(0);
+                    transform-origin: top; 
+                    max-height: 0; 
+                    overflow: hidden; 
+                    transition: transform 0.4s ease-in-out, max-height 0.4s ease-in-out;
+
+                    > li > a {
+                        display: block; // Obligatoriu ca să stea unele sub altele
+                        font-size: 1rem;
+                        background-color: var(--submenu-bg);
+                    }
+                }
+
+                &:hover > .submenu {
+                    transform: scaleY(1); 
+                    max-height: 300px; 
+                }
+            }
+        }
+    }
+}
