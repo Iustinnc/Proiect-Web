@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include('../fragmente/head') %>
+</head>
+<body>
+    <%- include('../fragmente/header') %>
+
+    <main style="text-align: center; padding: 50px 20px; min-height: 50vh;">
+        <!-- Aceste variabile sunt "injectate" automat de pe server -->
+        <h1 style="color: var(--primary-color); font-size: 3rem;"><%= titlu %></h1>
+        <p style="font-size: 1.5rem; margin-bottom: 20px;"><%- text %></p>
+        
+        <img src="<%= imagine %>" alt="Imagine eroare" style="max-width: 400px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        
+        <br><br>
+        <a href="/index" class="btn">Întoarce-te la Garaj (Acasă)</a>
+    </main>
+
+    <%- include('../fragmente/footer') %>
+</body>
+</html>

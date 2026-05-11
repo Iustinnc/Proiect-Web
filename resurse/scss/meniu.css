@@ -1,0 +1,264 @@
+@charset "UTF-8";
+body {
+  --menu-bg-dark: #222;
+  --menu-link-padding: 10px 15px;
+  --color-primary: #333;
+  --color-secondary: #000;
+  --color-text-light: #fff;
+  --color-hover-bg: #444;
+  --submenu-bg: #444;
+}
+
+@keyframes aparitie-bare {
+  0% {
+    opacity: 0;
+    transform: translateX(40px) rotate(180deg) scale(0.2);
+    background-color: transparent;
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateX(-10px) rotate(-20deg) scale(1.1);
+    background-color: var(--accent-color, #689D96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0) scale(1);
+    background-color: var(--color-text-light);
+  }
+}
+.main-nav .menu-list .menu-item-group .submenu > li > a, .main-nav .menu-list > li > a {
+  display: block;
+  padding: var(--menu-link-padding);
+  text-decoration: none;
+  text-align: center;
+  color: var(--color-text-light);
+  background-color: var(--color-primary);
+  position: relative;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.main-nav {
+  position: relative;
+  z-index: 1000;
+}
+.main-nav .hamburger-menu {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  z-index: 101;
+}
+.main-nav .hamburger-menu .line {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-text-light);
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  transition: background-color 0.3s ease;
+  animation: aparitie-bare 0.6s ease-out forwards;
+}
+.main-nav .hamburger-menu .line:nth-child(1) {
+  top: 0;
+}
+.main-nav .hamburger-menu .line:nth-child(2) {
+  top: 18px;
+}
+.main-nav .hamburger-menu .line:nth-child(3) {
+  bottom: 0;
+}
+.main-nav .menu-checkbox {
+  display: none;
+}
+.main-nav .menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: var(--menu-bg-dark);
+  border-radius: 5px;
+}
+.main-nav .menu-list > li {
+  position: relative;
+  flex-grow: 1;
+}
+.main-nav .menu-list > li > a {
+  font-size: 1rem;
+  overflow: hidden;
+}
+.main-nav .menu-list > li > a:hover {
+  background-color: var(--color-hover-bg);
+  font-size: 1.15rem;
+}
+.main-nav .menu-list > li:nth-child(1) > a {
+  animation-delay: 0.1s;
+}
+.main-nav .menu-list > li:nth-child(2) > a {
+  animation-delay: 0.2s;
+}
+.main-nav .menu-list > li:nth-child(3) > a {
+  animation-delay: 0.3s;
+}
+.main-nav .menu-list > li:nth-child(4) > a {
+  animation-delay: 0.4s;
+}
+.main-nav .menu-list > li:nth-child(5) > a {
+  animation-delay: 0.5s;
+}
+.main-nav .menu-list .menu-item-group:hover > .submenu {
+  transform: scaleY(1);
+}
+.main-nav .menu-list .menu-item-group .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--submenu-bg);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease-out;
+}
+.main-nav .menu-list .menu-item-group .submenu > li {
+  width: 100%;
+}
+.main-nav .menu-list .menu-item-group .submenu > li > a {
+  font-size: 0.95rem;
+  background-color: transparent;
+  overflow: hidden;
+}
+.main-nav .menu-list .menu-item-group .submenu > li > a::before, .main-nav .menu-list .menu-item-group .submenu > li > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(to bottom, var(--accent-color), var(--border-color));
+  transition: height 0.3s ease;
+}
+.main-nav .menu-list .menu-item-group .submenu > li > a::before {
+  left: 0;
+}
+.main-nav .menu-list .menu-item-group .submenu > li > a::after {
+  right: 0;
+}
+.main-nav .menu-list .menu-item-group .submenu > li > a:hover {
+  background-color: var(--color-hover-bg);
+  font-size: 1rem;
+}
+.main-nav .menu-list .menu-item-group .submenu > li > a:hover::before, .main-nav .menu-list .menu-item-group .submenu > li > a:hover::after {
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .main-nav .menu-list > li > a {
+    padding: 15px 10px;
+    font-size: 0;
+  }
+  .main-nav .menu-list > li > a i {
+    font-size: 1.4rem;
+  }
+  .main-nav .menu-list .menu-item-group .submenu > li > a {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 800px) {
+  header {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .main-nav {
+    order: -1;
+    margin-right: 15px;
+    position: static;
+    align-self: stretch;
+    display: flex;
+    align-items: center; /* Păstrează liniuțele centrate pe verticală în noul bloc */
+    padding: 0 20px; /* Adaugă spațiu frumos la stânga și la dreapta liniuțelor */
+    background-color: var(--submenu-bg); /* Tonul de gri dorit */
+    border-radius: 5px; /* Colțuri rotunjite pentru un aspect modern */
+  }
+  .main-nav .hamburger-menu {
+    display: block;
+    cursor: pointer;
+  }
+  .main-nav .hamburger-menu .line:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .main-nav .hamburger-menu .line:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+  .main-nav .hamburger-menu .line:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .main-nav .menu-checkbox:checked ~ .menu-list {
+    max-width: 100%;
+  }
+  .main-nav .menu-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 0;
+    overflow: hidden;
+    background-color: var(--color-secondary);
+    transition: max-width 0.6s ease-in-out;
+    z-index: 1000;
+  }
+  .main-nav .menu-list > li {
+    width: 100%;
+    border-top: 1px solid var(--color-primary);
+  }
+  .main-nav .menu-list > li > a {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    transition: background-color 0.3s ease;
+  }
+  .main-nav .menu-list > li > a i {
+    font-size: 1.2rem;
+    margin-right: 8px;
+  }
+  .main-nav .menu-list > li > a[href="#acasa"] {
+    font-size: 0;
+  }
+  .main-nav .menu-list > li > a[href="#acasa"] i {
+    font-size: 1.5rem;
+    margin-right: 0;
+  }
+  .main-nav .menu-list > li > a:hover {
+    background-color: var(--color-hover-bg);
+  }
+  .main-nav .menu-list .menu-item-group .submenu {
+    position: relative;
+    top: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    max-height: 0;
+    overflow: hidden;
+    transition: transform 0.4s ease-in-out, max-height 0.4s ease-in-out;
+  }
+  .main-nav .menu-list .menu-item-group .submenu > li > a {
+    display: block;
+    font-size: 1rem;
+    background-color: var(--submenu-bg);
+  }
+  .main-nav .menu-list .menu-item-group:hover > .submenu {
+    transform: scaleY(1);
+    max-height: 300px;
+  }
+}
+
+/*# sourceMappingURL=meniu.css.map */

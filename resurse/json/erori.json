@@ -1,0 +1,31 @@
+{
+    "cale_baza": "/resurse/imagini",
+    "eroare_default": {
+        "titlu": "Eroare Generică",
+        "text": "A apărut o eroare neașteptată. Ne cerem scuze pentru neplăceri!",
+        "imagine": "error-icon.png"
+    },
+    "info_erori": [
+        {
+            "identificator": 404,
+            "status": true,
+            "titlu": "404 - Pagina nu a fost găsită",
+            "text": "Ne pare rău, dar mașina sau pagina pe care o cauți nu există în parcarea noastră.",
+            "imagine": "error-icon.png"
+        },
+        {
+            "identificator": 403,
+            "status": true,
+            "titlu": "403 - Acces Interzis",
+            "text": "Hopa! Nu ai cheile pentru a accesa acest dosar.",
+            "imagine": "error-icon.png"
+        },
+        {
+            "identificator": 400,
+            "status": true,
+            "titlu": "400 - Cerere Invalidă",
+            "text": "Te rugăm să nu încerci să accesezi fișierele noastre interne (EJS).",
+            "imagine": "error-icon.png"
+        }
+    ]
+}
