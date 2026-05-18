@@ -445,7 +445,8 @@ tbody tr:hover {
 }
 
 .video-section {
-    width: 100%;
+    inherits: section; /* Preia stilul de bază al secțiunilor */
+    width: 90%;
     margin: 20px auto;
     display: flex;
     justify-content: center; /* Centrează videoclipul pe mijlocul ecranului */
@@ -453,7 +454,7 @@ tbody tr:hover {
 
 .video-responsive {
     width: 100%;
-    max-width: 800px; /* Lățimea maximă pe ecrane mari. Poți modifica valoarea! */
+    max-width: 600px; /* Lățimea maximă pe ecrane mari. Poți modifica valoarea! */
     height: 600px; /* Obligă videoclipul să își păstreze proporțiile (nu se turtește) */
     
     /* Elemente de design pentru a se potrivi cu restul site-ului */

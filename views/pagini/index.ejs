@@ -7,412 +7,491 @@
 
 
 <body>
-    
+
     <%- include('../fragmente/header') %>
 
-    <div id="watermark">
-        Oancea<br>Iustin-Alexandru
-    </div>
+        <div id="watermark">
+            Oancea<br>Iustin-Alexandru
+        </div>
 
-    <main>
-        <a href="#top" class="scroll-top" title="Back to Top">
-            <span class="arrow">&#8593;</span>
-        </a>
-        
-        
-        <div id="grid_pagina">
-            <section id="prezentare" class="z-pattern">
-                 <div class="text">
-                    <hgroup>
-                        <h1>Găsește Mașina Perfectă!</h1>
-                        <p>Cele mai bune oferte la mașini noi și second-hand. Alege modelul potrivit pentru tine!</p>
-                    </hgroup>
-                    <a href="#oferte" class="btn">Vezi Ofertele</a>
-                </div>
-                
-                <div class="image">
-                    <img src="/resurse/imagini/Bmw_M4.png" alt="Mașină de lux">
-                </div>
-            </section>
-            
-            <section id="continut">
-                <h2><i class="fa-solid fa-car" style="color: var(--primary-color);"></i> Noutăți Auto</h2>
-                <article>
-                    <h3>Ultimele lansări</h3>
+        <main>
 
-                    <p><strong><i class="fa-solid fa-bell fa-shake" style="color: #e74c3c;"></i> Atenție! Am deschis
-                            lista de precomenzi pentru modelele 2025!</strong></p>
 
-                    <p><b>Mașina electrică</b> a anului a fost anunțată. Este un <abbr
-                            title="Vehicul Electric">EV</abbr> revoluționar. O poți rezerva acum pentru un <i>test
-                            drive</i> gratuit.</p>
-                </article>
-                <div id="recenzii"><!--Imaginea cu masinile-->
 
-                    <h3>Recenzii</h3>
-                    <figure>
-                        <picture>
-                            <source media="(max-width: 800px)" srcset="resurse/imagini/Dacia_Logan.png">
-                            <source media="(max-width: 1100px)" srcset="resurse/imagini/Suzuki_S_cross.png">
-                            <img src="resurse/imagini/G_class.png" alt="Imagine cu o mașină"
-                                title="Click pentru a mări imaginea de teren">
-                        </picture>
-                        <figcaption>Noua generație de mașini de teren</figcaption>
-                    </figure>
+            <div id="grid_pagina">
 
-                    <section class="video-section">
-                        <video id="video-prezentare" controls preload="metadata" poster="/resurse/imagini/poster-video.jpg" class="video-responsive">
-                            
-                            
-                            <source src="/resurse/video/clip_FAQ.mp4" type="video/mp4">
-                            <source src="/resurse/video/clip_FAQ.webm" type="video/webm">
-                    
-                            
-                            <track src="/resurse/vtt/ro.vtt" kind="subtitles" srclang="ro" label="Română" default>
-                            <track src="/resurse/vtt/en.vtt" kind="subtitles" srclang="en" label="English">
-                    
-                            
-                            <p>Browserul dumneavoastră nu suportă redarea acestui videoclip.</p>
-                        </video>
-                    </section>
-
-                    <div class="video-faq-container">
-
-                        
-                        <div class="container-iframe">
-                            <div class="taburi-iframe">
-                                <a href="https://www.youtube.com/embed/Z-s0_D8hmBY?si=uze6JOzMsELzfTEa"
-                                    target="ifr-video">Test Drive Tesla Model S</a>
-                                <a href="https://www.youtube.com/embed/-E2xV3yd1hA?si=JVOPekmd9sF3cGoR"
-                                    target="ifr-video">Cum să îți întreții mașina</a>
-                                <a href="https://www.youtube.com/embed/tg-AQUISABU?si=AFGUhXzcfZBOxAhR"
-                                    target="ifr-video">Top 10 mașini sport 2024</a><br />
-                            </div>
-
-                            <iframe name="ifr-video" width="560" height="315"
-                                src="https://www.youtube.com/embed/0gHV9v4wjKQ?si=IymvX_ekqlMMFOr0" frameborder="0"
-                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-
-                        <!-- Secțiunea Întrebări Frecvente -->
-                        <div class="faq">
-                            <aside>
-                                <h2>Întrebări Frecvente:</h2>
-
-                                <details>
-                                    <summary>Care sunt avantajele unei mașini electrice?</summary>
-                                    <p>Mașinile electrice au costuri mai mici de întreținere, sunt mai ecologice și
-                                        oferă o experiență de condus mai silențioasă.</p>
-                                </details>
-
-                                <details>
-                                    <summary>Oferiți finanțare pentru achiziția unui vehicul?</summary>
-                                    <p>Da, colaborăm cu mai multe bănci și instituții financiare pentru a oferi soluții
-                                        flexibile de finanțare.</p>
-                                </details>
-
-                                <details>
-                                    <summary>Cât durează livrarea unei mașini noi?</summary>
-                                    <p>În funcție de model și disponibilitate, livrarea poate dura între <strong>7 și 30
-                                            de zile</strong>.</p>
-                                </details>
-
-                                <details>
-                                    <summary>Ce garanție oferă producătorii?</summary>
-                                    <p>Majoritatea producătorilor oferă o garanție de <strong>3 până la 7 ani</strong>,
-                                        în funcție de marcă și model.</p>
-                                </details>
-
-                                <details>
-                                    <summary>Care sunt cele mai economice mașini disponibile?</summary>
-                                    <p>Modelele cu consum redus de combustibil includ Toyota Yaris Hybrid, Renault Clio
-                                        E-Tech și Volkswagen Polo TDI.</p>
-                                </details>
-
-                                <details>
-                                    <summary>Este posibil un test drive înainte de achiziție?</summary>
-                                    <p>Da! Poți programa un test drive completând formularul de pe site sau vizitând
-                                        showroom-ul nostru.</p>
-                                </details>
-
-                                <details>
-                                    <summary>Care sunt cele mai sigure mașini din 2024?</summary>
-                                    <p>Conform testelor Euro NCAP, cele mai sigure mașini includ Volvo XC60, Tesla Model
-                                        Y și Mercedes-Benz EQS.</p>
-                                </details>
-
-                                <details>
-                                    <summary>Ce documente sunt necesare pentru a cumpăra o mașină?</summary>
-                                    <p>Ai nevoie de buletin, permis de conducere (opțional) și, pentru achiziții în
-                                        leasing, adeverință de venit.</p>
-                                </details>
-
-                                <details>
-                                    <summary>Oferiți servicii de buy-back?</summary>
-                                    <p>Da, poți aduce mașina ta veche și îți oferim o evaluare pentru a o folosi ca
-                                        avans la achiziția unui nou vehicul.</p>
-                                </details>
-                            </aside>
-                        </div>
+                <section id="prezentare" class="z-pattern">
+                    <div class="text">
+                        <hgroup>
+                            <h1>Găsește Mașina Perfectă!</h1>
+                            <p>Cele mai bune oferte la mașini noi și second-hand. Alege modelul potrivit pentru tine!
+                            </p>
+                        </hgroup>
+                        <a href="#oferte" class="btn">Vezi Ofertele</a>
                     </div>
 
-                    <a href="/resurse/pdf/manual_utilizare_renault.pdf" download="Ghid_Renault.pdf">Descarca aici
-                        PDF-ul</a>
-                </div>
+                    <div class="image">
+                        <img src="/resurse/imagini/Bmw_M4.png" alt="Mașină de lux">
+                    </div>
+                </section>
 
-                <h3>Fizica Auto: Energia Cinetică (Bonus MathML)</h3>
-                <p>La testele de siguranță, impactul depinde de energia cinetică a vehiculului. Formula este:</p>
+                <section id="continut">
+                    <h2><i class="fa-solid fa-car" style="color: var(--primary-color);"></i> Noutăți Auto</h2>
+                    <article>
+                        <h3>Ultimele lansări</h3>
 
-                <math xmlns="http://www.w3.org/1998/Math/MathML" class="formula-bonus" display="block">
-                    <msub>
-                        <mi>E</mi>
-                        <mi>k</mi>
-                    </msub>
-                    <mo>=</mo>
-                    <mfrac>
-                        <mn>1</mn>
-                        <mn>2</mn>
-                    </mfrac>
-                    <mi>m</mi>
-                    <msup>
-                        <mi>v</mi>
-                        <mn>2</mn>
-                    </msup>
-                </math>
+                        <p><strong><i class="fa-solid fa-bell fa-shake" style="color: #e74c3c;"></i> Atenție! Am deschis
+                                lista de precomenzi pentru modelele 2025!</strong></p>
 
-                <embed src="/resurse/pdf/manual_utilizare_renault.pdf" type="application/pdf" width="500" height="400">
+                        <p><b>Mașina electrică</b> a anului a fost anunțată. Este un <abbr
+                                title="Vehicul Electric">EV</abbr> revoluționar. O poți rezerva acum pentru un <i>test
+                                drive</i> gratuit.</p>
+                    </article>
+                    <div id="recenzii"><!--Imaginea cu masinile-->
 
-                <h2>Performanțe și Statistici Auto</h2>
+                        <div class="container my-4 p-4 bg-secondary text-white rounded shadow">
+                            <h2>Testare Customizare Bootstrap</h2>
+                            <p>Acest chenar folosește culoarea secundară (gri-ul tău închis) și marginile rotunjite la
+                                10px.</p>
 
-                <p>Nivelul emisiilor de CO2 pentru cel mai nou model hibrid (Optim: sub 20%):<br>
-                    <meter value="15" min="0" max="100" low="20" high="60" optimum="10">15%</meter> - Emisii minime
-                    (Eco-friendly)
-                </p>
+                            <button class="btn btn-primary btn-lg">Buton Tema Primary</button>
+                            <button class="btn btn-success">Buton Tema Success</button>
+                        </div>
 
-                <p>Gradul de uzură al unei mașini vechi neîntreținute:<br>
-                    <meter value="85" min="0" max="100" low="30" high="80" optimum="10">85%</meter> - Uzură majoră
-                </p>
+                        <h3>Recenzii</h3>
+                        <figure>
+                            <picture>
+                                <source media="(max-width: 800px)" srcset="resurse/imagini/Dacia_Logan.png">
+                                <source media="(max-width: 1100px)" srcset="resurse/imagini/Suzuki_S_cross.png">
+                                <img src="resurse/imagini/G_class.png" alt="Imagine cu o mașină"
+                                    title="Click pentru a mări imaginea de teren">
+                            </picture>
+                            <figcaption>Noua generație de mașini de teren</figcaption>
+                        </figure>
 
-                <h3>Resurse Externe:</h3>
-                <p>Verifică istoricul mașinii pe site-ul oficial: <a href="https://www.rarom.ro"
-                        target="_blank">Registrul Auto Român</a>.</p>
+                        <section class="video-section">
+                            <video id="video-prezentare" controls preload="metadata"
+                                poster="/resurse/imagini/poster-video.jpg" class="video-responsive">
 
-                <p>Află mai multe despre istoria mașinilor:
-                    <a href="https://ro.wikipedia.org/wiki/Automobil#Istorie_și_evoluție" target="_blank">
-                        https://ro.wikipedia.org/<wbr>wiki/<wbr>Automobil<wbr>#Istorie_și_evoluție
-                    </a>
-                </p>
 
-                <h2>Dicționar și Păreri</h2>
-                <dl>
-                    <dt><dfn>Buy-back</dfn></dt>
-                    <dd>Sistem prin care poți aduce mașina veche pentru a o folosi ca avans la achiziția uneia noi.</dd>
+                                <source src="/resurse/video/clip_FAQ.mp4" type="video/mp4">
+                                <source src="/resurse/video/clip_FAQ.webm" type="video/webm">
 
-                    <dt><dfn>Leasing</dfn></dt>
-                    <dd>Modalitate de finanțare flexibilă pentru achiziția de <b>vehicule</b>.</dd>
-                </dl>
 
-                <blockquote>
-                    <p>Am cumpărat recent o mașină de aici. <q>Cea mai bună decizie a anului!</q> - scrie revista
-                        <cite>Auto Motor</cite>.
+                                <track src="/resurse/vtt/ro.vtt" kind="subtitles" srclang="ro" label="Română" default>
+                                <track src="/resurse/vtt/en.vtt" kind="subtitles" srclang="en" label="English">
+
+
+                                <p>Browserul dumneavoastră nu suportă redarea acestui videoclip.</p>
+                            </video>
+                        </section>
+
+                        <div class="video-faq-container">
+
+
+                            <div class="container-iframe">
+                                <div class="taburi-iframe">
+                                    <a href="https://www.youtube.com/embed/Z-s0_D8hmBY?si=uze6JOzMsELzfTEa"
+                                        target="ifr-video">Test Drive Tesla Model S</a>
+                                    <a href="https://www.youtube.com/embed/-E2xV3yd1hA?si=JVOPekmd9sF3cGoR"
+                                        target="ifr-video">Cum să îți întreții mașina</a>
+                                    <a href="https://www.youtube.com/embed/tg-AQUISABU?si=AFGUhXzcfZBOxAhR"
+                                        target="ifr-video">Top 10 mașini sport 2024</a><br />
+                                </div>
+
+                                <iframe name="ifr-video" width="560" height="315"
+                                    src="https://www.youtube.com/embed/0gHV9v4wjKQ?si=IymvX_ekqlMMFOr0" frameborder="0"
+                                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+
+                            <!-- Secțiunea Întrebări Frecvente -->
+                            <div class="faq">
+                                <aside>
+                                    <h2>Întrebări Frecvente:</h2>
+
+                                    <details>
+                                        <summary>Care sunt avantajele unei mașini electrice?</summary>
+                                        <p>Mașinile electrice au costuri mai mici de întreținere, sunt mai ecologice și
+                                            oferă o experiență de condus mai silențioasă.</p>
+                                    </details>
+
+                                    <details>
+                                        <summary>Oferiți finanțare pentru achiziția unui vehicul?</summary>
+                                        <p>Da, colaborăm cu mai multe bănci și instituții financiare pentru a oferi
+                                            soluții
+                                            flexibile de finanțare.</p>
+                                    </details>
+
+                                    <details>
+                                        <summary>Cât durează livrarea unei mașini noi?</summary>
+                                        <p>În funcție de model și disponibilitate, livrarea poate dura între <strong>7
+                                                și 30
+                                                de zile</strong>.</p>
+                                    </details>
+
+                                    <details>
+                                        <summary>Ce garanție oferă producătorii?</summary>
+                                        <p>Majoritatea producătorilor oferă o garanție de <strong>3 până la 7
+                                                ani</strong>,
+                                            în funcție de marcă și model.</p>
+                                    </details>
+
+                                    <details>
+                                        <summary>Care sunt cele mai economice mașini disponibile?</summary>
+                                        <p>Modelele cu consum redus de combustibil includ Toyota Yaris Hybrid, Renault
+                                            Clio
+                                            E-Tech și Volkswagen Polo TDI.</p>
+                                    </details>
+
+                                    <details>
+                                        <summary>Este posibil un test drive înainte de achiziție?</summary>
+                                        <p>Da! Poți programa un test drive completând formularul de pe site sau vizitând
+                                            showroom-ul nostru.</p>
+                                    </details>
+
+                                    <details>
+                                        <summary>Care sunt cele mai sigure mașini din 2024?</summary>
+                                        <p>Conform testelor Euro NCAP, cele mai sigure mașini includ Volvo XC60, Tesla
+                                            Model
+                                            Y și Mercedes-Benz EQS.</p>
+                                    </details>
+
+                                    <details>
+                                        <summary>Ce documente sunt necesare pentru a cumpăra o mașină?</summary>
+                                        <p>Ai nevoie de buletin, permis de conducere (opțional) și, pentru achiziții în
+                                            leasing, adeverință de venit.</p>
+                                    </details>
+
+                                    <details>
+                                        <summary>Oferiți servicii de buy-back?</summary>
+                                        <p>Da, poți aduce mașina ta veche și îți oferim o evaluare pentru a o folosi ca
+                                            avans la achiziția unui nou vehicul.</p>
+                                    </details>
+                                </aside>
+                            </div>
+                        </div>
+
+                        <%- include('../fragmente/galerie') %>
+
+                            <section id="galerie-animata">
+                                <% for(let imag of locals.imagini_animate) { %>
+                                    <figure>
+                                        <img src="<%= imag.fisier %>" alt="<%= imag.alt ? imag.alt : imag.titlu %>"
+                                            title="<%= imag.text_descriere %>">
+                                        <figcaption>
+                                            <span class="descriere-titlu">
+                                                <%= imag.titlu %>
+                                            </span>
+                                        </figcaption>
+                                    </figure>
+                                    <% } %>
+                            </section>
+
+                            <div id="imagine-duotone"></div>
+
+                            <p>... textul din prima secțiune ...</p>
+
+                            <hr class="separator-cerc">
+
+                            <p>... textul din a doua secțiune ...</p>
+
+                            <a href="/resurse/pdf/manual_utilizare_renault.pdf" download="Ghid_Renault.pdf">Descarca
+                                aici
+                                PDF-ul</a>
+                    </div>
+
+                    <h3>Fizica Auto: Energia Cinetică (Bonus MathML)</h3>
+                    <p>La testele de siguranță, impactul depinde de energia cinetică a vehiculului. Formula este:</p>
+
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" class="formula-bonus" display="block">
+                        <msub>
+                            <mi>E</mi>
+                            <mi>k</mi>
+                        </msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mn>1</mn>
+                            <mn>2</mn>
+                        </mfrac>
+                        <mi>m</mi>
+                        <msup>
+                            <mi>v</mi>
+                            <mn>2</mn>
+                        </msup>
+                    </math>
+
+                    <embed src="/resurse/pdf/manual_utilizare_renault.pdf" type="application/pdf" width="500"
+                        height="400">
+
+                    <h2>Performanțe și Statistici Auto</h2>
+
+                    <p>Nivelul emisiilor de CO2 pentru cel mai nou model hibrid (Optim: sub 20%):<br>
+                        <meter value="15" min="0" max="100" low="20" high="60" optimum="10">15%</meter> - Emisii minime
+                        (Eco-friendly)
                     </p>
-                </blockquote>
 
-            </section>
+                    <p>Gradul de uzură al unei mașini vechi neîntreținute:<br>
+                        <meter value="85" min="0" max="100" low="30" high="80" optimum="10">85%</meter> - Uzură majoră
+                    </p>
 
-            <section id="tabel">
+                    <h3>Resurse Externe:</h3>
+                    <p>Verifică istoricul mașinii pe site-ul oficial: <a href="https://www.rarom.ro"
+                            target="_blank">Registrul Auto Român</a>.</p>
 
-                <div class="table-container">
-                    <table>
-                        <caption>Top 4 cele mai vândute mașini</caption>
-                        <thead>
-                            <tr>
-                                <th>Model</th>
-                                <th>Producător</th>
-                                <th>Preț (€)</th>
-                                <th>Vânzări 2024</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Model S</td>
-                                <td>Tesla</td>
-                                <td rowspan="2">85,000</td>
-                                <td>25,000</td>
-                            </tr>
-                            <tr>
-                                <td>Model 3</td>
-                                <td>Tesla</td>
-                                <td>40,000</td>
-                            </tr>
-                            <tr>
-                                <td>BMW M4</td>
-                                <td>BMW</td>
-                                <td>75,000</td>
-                                <td>18,000</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">Total vânzări</td>
-                                <td colspan="2">83,000</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="4">Date actualizate în martie 2024</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
+                    <p>Află mai multe despre istoria mașinilor:
+                        <a href="https://ro.wikipedia.org/wiki/Automobil#Istorie_și_evoluție" target="_blank">
+                            https://ro.wikipedia.org/<wbr>wiki/<wbr>Automobil<wbr>#Istorie_și_evoluție
+                        </a>
+                    </p>
 
-            </section>
+                    <h2>Dicționar și Păreri</h2>
+                    <dl>
+                        <dt><dfn>Buy-back</dfn></dt>
+                        <dd>Sistem prin care poți aduce mașina veche pentru a o folosi ca avans la achiziția uneia noi.
+                        </dd>
 
-            <section id="calendar" class="calendar-container">
-                <h2>Calendar Evenimente Auto</h2>
-                <ul>
-                    <li>
-                        <time datetime="2025-04-15T10:00">15 Aprilie 2025, ora 10:00</time> -
-                        <b>Lansare Model X</b>: Prezentarea oficială a noului SUV în showroom.
-                    </li>
-                    <li>
-                        <time datetime="2025-05-20T12:00">20 Mai 2025, ora 12:00</time> -
-                        <b>Ziua Porților Deschise</b>: Oferim un <i>test drive</i> gratuit tuturor participanților.
-                    </li>
-                    <li>
-                        <time datetime="2025-06-10T09:00">10 Iunie 2025, ora 09:00</time> -
-                        <b>Târg de mașini rulate</b>: Cele mai bune oferte pentru <b>autoturisme</b> la mâna a doua.
-                    </li>
-                </ul>
-            </section>
+                        <dt><dfn>Leasing</dfn></dt>
+                        <dd>Modalitate de finanțare flexibilă pentru achiziția de <b>vehicule</b>.</dd>
+                    </dl>
 
-            <section id="anunturi" class="anunturi-container">
-                <!-- <h2>Anunțuri Importante</h2>
+                    <blockquote>
+                        <p>Am cumpărat recent o mașină de aici. <q>Cea mai bună decizie a anului!</q> - scrie revista
+                            <cite>Auto Motor</cite>.
+                        </p>
+                    </blockquote>
+
+                </section>
+
+                <section id="tabel">
+
+                    <div class="table-container">
+                        <table>
+                            <caption>Top 4 cele mai vândute mașini</caption>
+                            <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>Producător</th>
+                                    <th>Preț (€)</th>
+                                    <th>Vânzări 2024</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Model S</td>
+                                    <td>Tesla</td>
+                                    <td rowspan="2">85,000</td>
+                                    <td>25,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Model 3</td>
+                                    <td>Tesla</td>
+                                    <td>40,000</td>
+                                </tr>
+                                <tr>
+                                    <td>BMW M4</td>
+                                    <td>BMW</td>
+                                    <td>75,000</td>
+                                    <td>18,000</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Total vânzări</td>
+                                    <td colspan="2">83,000</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4">Date actualizate în martie 2024</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                </section>
+
+                <section id="calendar" class="calendar-container">
+                    <h2>Calendar Evenimente Auto</h2>
+                    <ul>
+                        <li>
+                            <time datetime="2025-04-15T10:00">15 Aprilie 2025, ora 10:00</time> -
+                            <b>Lansare Model X</b>: Prezentarea oficială a noului SUV în showroom.
+                        </li>
+                        <li>
+                            <time datetime="2025-05-20T12:00">20 Mai 2025, ora 12:00</time> -
+                            <b>Ziua Porților Deschise</b>: Oferim un <i>test drive</i> gratuit tuturor participanților.
+                        </li>
+                        <li>
+                            <time datetime="2025-06-10T09:00">10 Iunie 2025, ora 09:00</time> -
+                            <b>Târg de mașini rulate</b>: Cele mai bune oferte pentru <b>autoturisme</b> la mâna a doua.
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="anunturi" class="anunturi-container">
+                    <!-- <h2>Anunțuri Importante</h2>
                 <ul>
                     <li><strong>[12 Martie]</strong> Reduceri la modele electrice până la 20%!</li>
                     <li><strong>[18 Martie]</strong> Lansarea noului model BMW iX3!</li>
                     <li><strong>[25 Martie]</strong> Eveniment de test-drive pentru mașini hibride.</li>
                 </ul> -->
 
-                <p>Lorem Ipsum
-                    "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                    "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it
-                    is pain..."
+                    <p>Lorem Ipsum
+                        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                        "There is no one who loves pain itself, who seeks after it and wants to have it, simply because
+                        it
+                        is pain..."
 
-                    freestar
+                        freestar
 
-                    freestar
-                    What is Lorem Ipsum?
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        freestar
+                        What is Lorem Ipsum?
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                        type
+                        and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                        the
+                        leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                        1960s
+                        with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                        desktop
+                        publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-                    Why do we use it?
-                    It is a long established fact that a reader will be distracted by the readable content of a page
-                    when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution of letters, as opposed to using 'Content here, content here', making it look like
-                    readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their
-                    default model text, and a search for 'lorem ipsum' will uncover many web sites still in their
-                    infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose
-                    (injected humour and the like).
-
-
-                    Where does it come from?
-                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                    classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin
-                    professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
-                    consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
-                    literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33
-                    of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This
-                    book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of
-                    Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                    Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in
-                    their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-
-                    Where can I get some?
-                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                    alteration in some form, by injected humour, or randomised words which don't look even slightly
-                    believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                    anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet
-                    tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
-                    It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures,
-                    to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free
-                    from repetition, injected humour, or non-characteristic words etc.
-                </p>
-            </section>
-
-            <section id="lista_util">
-
-            </section>
-
-            <section id="date_util">
-
-            </section>
-
-            <section id="date_site_server">
-                <p>
-                    Lorem Ipsum
-                    "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                    "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it
-                    is pain..."
-
-                    freestar
-
-                    freestar
-                    What is Lorem Ipsum?
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-                    Why do we use it?
-                    It is a long established fact that a reader will be distracted by the readable content of a page
-                    when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution of letters, as opposed to using 'Content here, content here', making it look like
-                    readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their
-                    default model text, and a search for 'lorem ipsum' will uncover many web sites still in their
-                    infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose
-                    (injected humour and the like).
+                        Why do we use it?
+                        It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed to using 'Content here, content here', making it look like
+                        readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+                        their
+                        default model text, and a search for 'lorem ipsum' will uncover many web sites still in their
+                        infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
+                        purpose
+                        (injected humour and the like).
 
 
-                    Where does it come from?
-                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                    classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin
-                    professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
-                    consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
-                    literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33
-                    of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This
-                    book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of
-                    Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                        Where does it come from?
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                        classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a
+                        Latin
+                        professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
+                        consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
+                        literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
+                        1.10.33
+                        of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
+                        This
+                        book is a treatise on the theory of ethics, very popular during the Renaissance. The first line
+                        of
+                        Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
 
-                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                    Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in
-                    their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+                        Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced
+                        in
+                        their exact original form, accompanied by English versions from the 1914 translation by H.
+                        Rackham.
 
-                    Where can I get some?
-                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                    alteration in some form, by injected humour, or randomised words which don't look even slightly
-                    believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                    anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet
-                    tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
-                    It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures,
-                    to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free
-                    from repetition, injected humour, or non-characteristic words etc.
-                </p>
-            </section>
-            
-        </div>
-    </main>
+                        Where can I get some?
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                        alteration in some form, by injected humour, or randomised words which don't look even slightly
+                        believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
+                        anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the
+                        Internet
+                        tend to repeat predefined chunks as necessary, making this the first true generator on the
+                        Internet.
+                        It uses a dictionary of over 200 Latin words, combined with a handful of model sentence
+                        structures,
+                        to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always
+                        free
+                        from repetition, injected humour, or non-characteristic words etc.
+                    </p>
+                </section>
 
-    
-    <%- include('../fragmente/footer') %>
-    
+                <section id="lista_util">
+
+                </section>
+
+                <section id="date_util">
+
+                </section>
+
+                <section id="date_site_server">
+                    <p>
+                        Lorem Ipsum
+                        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                        "There is no one who loves pain itself, who seeks after it and wants to have it, simply because
+                        it
+                        is pain..."
+
+                        freestar
+
+                        freestar
+                        What is Lorem Ipsum?
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                        type
+                        and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                        the
+                        leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                        1960s
+                        with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                        desktop
+                        publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                        Why do we use it?
+                        It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed to using 'Content here, content here', making it look like
+                        readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+                        their
+                        default model text, and a search for 'lorem ipsum' will uncover many web sites still in their
+                        infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
+                        purpose
+                        (injected humour and the like).
+
+
+                        Where does it come from?
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                        classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a
+                        Latin
+                        professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
+                        consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
+                        literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
+                        1.10.33
+                        of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
+                        This
+                        book is a treatise on the theory of ethics, very popular during the Renaissance. The first line
+                        of
+                        Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+                        Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced
+                        in
+                        their exact original form, accompanied by English versions from the 1914 translation by H.
+                        Rackham.
+
+                        Where can I get some?
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                        alteration in some form, by injected humour, or randomised words which don't look even slightly
+                        believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
+                        anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the
+                        Internet
+                        tend to repeat predefined chunks as necessary, making this the first true generator on the
+                        Internet.
+                        It uses a dictionary of over 200 Latin words, combined with a handful of model sentence
+                        structures,
+                        to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always
+                        free
+                        from repetition, injected humour, or non-characteristic words etc.
+                    </p>
+                </section>
+
+            </div>
+        </main>
+
+
+        <%- include('../fragmente/footer') %>
+
 </body>
+
 </html>

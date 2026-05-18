@@ -1,0 +1,85 @@
+{
+  "cale_galerie": "resurse/imagini/galerie",
+  "imagini": [
+    {
+      "fisier": "BmwF10_iarna.jpg",
+      "titlu": "Bmw F10 în zăpadă",
+      "text_descriere": "O mașină sportiva pentru experiente de neuitat pe timp de iarnă.",
+      "anotimp": "iarna",
+      "licenta": "CC0"
+    },
+    {
+      "fisier": "chargerSRT8.jpg",
+      "titlu": "Dodge Charger SRT8",
+      "text_descriere": "Un Muscle car cu performanțe excepționale.",
+      "anotimp": "toate",
+      "licenta": "CC0"
+    },
+    {
+        "fisier": "CLS_toamna.jpg",
+        "titlu": "Mercedes CLS pe timp de toamna",
+        "text_descriere": "Un autoturism de lux pentru experiente de neuitat pe timp de toamna.",
+        "anotimp": "toamna",
+        "licenta": "CC0"
+    },
+    {
+        "fisier": "F10_vara.jpg",
+        "titlu": "Bmw F10 pe timp de vara",
+        "text_descriere": "O mașină sportiva pentru experiente de neuitat pe timp de vara.",
+        "anotimp": "vara",
+        "licenta": "CC0"
+    },
+    {
+        "fisier": "gt86_toamna.jpg",
+        "titlu": "Toyota GT86 pe timp de toamna",
+        "text_descriere": "Un autoturism sportiv pentru experiente de neuitat pe timp de toamna.",
+        "anotimp": "toamna",
+        "licenta": "CC0"
+    },
+    {
+        "fisier": "Hyundai_primavara.jpg",
+        "titlu": "Hyundai Elantra pe timp de primavara",
+        "text_descriere": "Un autoturism de clasa medie pentru experiente de neuitat pe timp de primavara.",
+        "anotimp": "primavara",
+        "licenta": "CC0"
+    },
+    {
+        "fisier": "S7_iarna.jpg",
+        "titlu": "Audi S7 pe timp de iarna",
+        "text_descriere": "Un autoturism sportiv pentru experiente de neuitat pe timp de iarna.",
+        "anotimp": "iarna",
+        "licenta": "CC0"
+    },
+    {
+        "fisier": "S7_toamna.jpg",
+        "titlu": "Audi S7 pe timp de toamna",
+        "text_descriere": "Un autoturism sportiv pentru experiente de neuitat pe timp de toamna.",
+        "anotimp": "toamna",
+        "licenta": "CC0"
+    },
+    {
+        "fisier": "SuvToyota_iarna.jpg",
+        "titlu": "Toyota RAV4 pe timp de iarna",
+        "text_descriere": "Un SUV pentru experiente de neuitat pe timp de iarna.",
+        "anotimp": "iarna",
+        "licenta": "CC0"
+    },
+    {
+        "fisier": "BRZ_toamna.jpg",
+        "titlu": "Subaru BRZ pe timp de toamna",
+        "text_descriere": "Un autoturism sportiv pentru experiente de neuitat pe timp de toamna.",
+        "anotimp": "toamna",
+        "licenta": "CC0"
+    },
+    {
+        "fisier": "CorvetteC5.jpg",
+        "titlu": "Chevrolet Corvette C5",
+        "text_descriere": "Un autoturism sportiv pentru experiente de neuitat pe timp de toate anotimpurile.",
+        "anotimp": "toate",
+        "licenta": "CC-BY",
+        "autor": "Vyacheslav Argenberg",
+        "link_autor": "https://commons.wikimedia.org/wiki/User:Argenberg"
+    }
+    
+  ]
+}

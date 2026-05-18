@@ -1,0 +1,31 @@
+<section id="galerie-statica">
+    <div class="reflexie-container">
+        <span class="text-principal">Galerie Auto</span>
+        <span class="text-reflexie" aria-hidden="true">Galerie Auto</span>
+    </div>
+    <div id="grid-galerie">
+        <% for(imag of locals.imagini) { %>
+            <figure>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="<%= imag.fisier_mic %>">
+                    <source media="(max-width: 900px)" srcset="<%= imag.fisier_mediu %>">
+                    <img src="<%= imag.fisier %>" alt="<%= imag.alt ? imag.alt : imag.titlu %>"
+                        title="<%= imag.text_descriere %>">
+                </picture>
+                <figcaption>
+                    <span class="descriere-titlu">
+                        <%= imag.titlu %>
+                    </span>
+                    <% if(imag.licenta=="CC-BY" && imag.autor) { %>
+                        <div class="licenta-atribuire">
+                            Foto de <a href="<%= imag.link_autor %>" target="_blank">
+                                <%= imag.autor %>
+                            </a>
+                            (Licență CC-BY)
+                        </div>
+                        <% } %>
+                </figcaption>
+            </figure>
+            <% } %>
+    </div>
+</section>

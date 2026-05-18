@@ -1,0 +1,99 @@
+@charset "UTF-8";
+#galerie-animata {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  margin: 40px auto;
+  overflow: hidden;
+  border: 20px solid red;
+  border-image: url("/resurse/imagini/rama.jpg") 30 round; /* Pune o poză de border aici */
+}
+#galerie-animata:hover figure {
+  animation-play-state: paused;
+}
+#galerie-animata figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  animation: anim-galerie 18s linear infinite;
+}
+#galerie-animata figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#galerie-animata figure figcaption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+#galerie-animata figure:nth-child(1) {
+  animation-delay: 0s;
+}
+#galerie-animata figure:nth-child(2) {
+  animation-delay: 3s;
+}
+#galerie-animata figure:nth-child(3) {
+  animation-delay: 6s;
+}
+#galerie-animata figure:nth-child(4) {
+  animation-delay: 9s;
+}
+#galerie-animata figure:nth-child(5) {
+  animation-delay: 12s;
+}
+#galerie-animata figure:nth-child(6) {
+  animation-delay: 15s;
+}
+
+@keyframes anim-galerie {
+  0% {
+    z-index: 10;
+    opacity: 1;
+    /* Imagine completă */
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%, 0 50%, 100% 50%, 100% 100%, 0 100%);
+  }
+  11.6666666667% {
+    z-index: 10;
+    opacity: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%, 0 50%, 100% 50%, 100% 100%, 0 100%);
+  }
+  16.6666666667% {
+    z-index: 10;
+    opacity: 1;
+    /* Imagine tăiată la maxim (rămân doar 2 dungi invizibile sus/jos) */
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%, 0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+  16.6676666667% {
+    z-index: 1;
+    opacity: 0;
+    /* Se ascunde tăcut în spate și își reface forma */
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%, 0 50%, 100% 50%, 100% 100%, 0 100%);
+  }
+  95% {
+    z-index: 1;
+    opacity: 0;
+  }
+  95.001% {
+    z-index: 9; /* Se pregătește chiar sub imaginea curentă */
+    opacity: 1;
+  }
+  100% {
+    z-index: 9;
+    opacity: 1;
+  }
+}
+/* Ascundem pe ecrane medii și mici */
+@media screen and (max-width: 1100px) {
+  #galerie-animata {
+    display: none;
+  }
+}

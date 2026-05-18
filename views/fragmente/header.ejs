@@ -11,26 +11,30 @@
 
         <ul class="menu-list" id="menu-list">
             <li><a href="/index"><i class="fa-solid fa-house"></i> Acasă</a></li>
-            <li><a href="#noutati"><i class="fa-solid fa-newspaper"></i> Noutăți</a></li>
+            <li><a href="/index#noutati"><i class="fa-solid fa-newspaper"></i> Noutăți</a></li>
             <li class="menu-item-group">
-                <a href="#catalog"><i class="fa-solid fa-car"></i> Catalog</a>
+                <a href="/index#catalog"><i class="fa-solid fa-car"></i> Catalog</a>
                 <ul class="submenu">
                     <li><a href="/produse-a.html">Mașini</a></li>
                     <li><a href="/produse-b.html">Piese</a></li>
                 </ul>
             </li>
             <li class="menu-item-group">
-                <a href="#servicii"><i class="fa-solid fa-wrench"></i> Servicii</a>
+                <a href="/index#servicii"><i class="fa-solid fa-wrench"></i> Servicii</a>
                 <ul class="submenu">
-                    <li><a href="#mentenanta">Mentenanță</a></li>
-                    <li><a href="#consultanta">Consultanță</a></li>
+                    <li><a href="/index#mentenanta">Mentenanță</a></li>
+                    <li><a href="/index#consultanta">Consultanță</a></li>
                 </ul>
             </li>
-            <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+            <li><a href="/index#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
             <li><a href="/despre"><i class="fa-solid fa-info-circle"></i> Despre Noi</a></li>
         </ul>
     </nav>
     <div class="user-info" style="text-align: right; font-size: 0.9rem; margin-top: 10px;">
-        Conectat de la IP: <strong><%= locals.ip || 'Necunoscut' %></strong>
+        Conectat de la IP: <strong><%- locals.ip || 'Necunoscut' %></strong>
     </div>
+
+    <a href="/index#top" class="scroll-top" title="Back to Top">
+            <span class="arrow">&#8593;</span>
+        </a>
 </header>
