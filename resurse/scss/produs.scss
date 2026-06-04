@@ -1,0 +1,117 @@
+/* ==========================================================================
+   STILIZARE PAGINĂ PRODUS - STRUCTURĂ ȘI CARUSEL DINAMIC (SCSS)
+   ========================================================================== */
+
+#art-produs {
+    display: flex;
+    flex-wrap: wrap; // Permite trecerea pe rândul următor pe ecrane mici
+    gap: 2.5rem;
+    margin-top: 1.5rem;
+
+    // Titlul ocupă întotdeauna lățimea completă de sus
+    h3 {
+        width: 100%;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid var(--bs-info, #63C8BA);
+        padding-bottom: 0.5rem;
+    }
+
+    // Caseta din stânga cu datele tehnice
+    .specificatii-auto {
+        flex: 1 1 400px; // Crește și scade dinamic, pornind de la o bază de 400px
+        background-color: rgba(var(--bs-dark-rgb), 0.02);
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid rgba(var(--bs-secondary-rgb), 0.15);
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px dashed rgba(var(--bs-secondary-rgb), 0.1);
+            padding-bottom: 0.5rem;
+            
+            span {
+                font-weight: bold;
+            }
+        }
+
+        .descriere-completa, 
+        .dotari-auto {
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(var(--bs-secondary-rgb), 0.2);
+        }
+    }
+
+    
+    #caruselMasina {
+        flex: 1 1 500px; 
+        width: 100%;
+        max-width: 650px;
+        align-self: start;
+
+        .carousel-inner {
+            border-radius: 12px;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+
+        .carousel-item {
+            img {
+                height: 420px;
+                object-fit: cover; 
+                width: 100%;
+            }
+        }
+
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 12%;
+            opacity: 0.8;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &-icon {
+                background-color: rgba(17, 22, 21, 0.6); 
+                padding: 1.5rem;
+                border-radius: 50%;
+                background-size: 55%;
+            }
+        }
+
+        // 🌟 REZOLVARE VIZIBILITATE INDICATORI (Liniuțele de jos)
+        .carousel-indicators {
+            bottom: 10px;
+
+            button {
+                background-color: #111615 !important; // Liniuțe negre ca să se vadă pe mașini deschise
+                height: 5px;
+                border-radius: 3px;
+                opacity: 0.4;
+
+                &.active {
+                    background-color: var(--bs-info, #63C8BA) !important; // Mentă când e activ
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVITATE (MOBILE-FRIENDLY)
+   ========================================================================== */
+
+@media screen and (max-width: 992px) {
+    #art-produs {
+        grid-template-columns: 1fr; /* O singură coloană pe mobil */
+        gap: 30px;
+
+        /* Pe mobil, păstrăm ordinea normală sau o inversăm cum ai nevoie */
+        .nume { grid-column: 1; }
+        .specificatii-auto { grid-column: 1; grid-row: 2; }
+        .imag-produs { grid-column: 1; grid-row: 3; } /* Poza trece jos pe mobil */
+    }
+}

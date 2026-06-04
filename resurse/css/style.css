@@ -8,6 +8,18 @@
 }
 
 
+:root[data-theme="dark"] {
+    --primary-color: #63C8BA;   /* RĂMÂNE LA FEL - Mentă deschisă, arată superb pe fundal închis */
+    --secondary-color: #a2c4c0; /* MODIFICAT - O nuanță mai deschisă de verde-gri, perfectă pentru texte secundare */
+    --accent-color: #50F2DD;    /* RĂMÂNE LA FEL - Cyan neon, ideal pentru hover-uri și evidențieri */
+    
+    --text-color: #e2ecea;      /* INVERSAT - Din text închis devine un alb-mintoas, ultra-lizibil */
+    --text-color2: #1c2322;     /* INVERSAT - Din fundalul alb de card devine un cărbune-închis cu tentă de verde-arătos */
+    --border-color: #313f3d;    /* MODIFICAT - O bordură fină, discretă, puțin mai deschisă decât fundalul cardului */
+    
+    --bg-pagina: #111615;       
+}
+
 body {
     background-color: var(--border-color);
     color: var(--text-color);

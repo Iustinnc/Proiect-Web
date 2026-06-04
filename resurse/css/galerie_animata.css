@@ -19,7 +19,7 @@
   width: 100%;
   height: 100%;
   margin: 0;
-  animation: anim-galerie 18s linear infinite;
+  animation: anim-galerie 12s linear infinite;
 }
 #galerie-animata figure img {
   width: 100%;
@@ -47,12 +47,6 @@
 #galerie-animata figure:nth-child(4) {
   animation-delay: 9s;
 }
-#galerie-animata figure:nth-child(5) {
-  animation-delay: 12s;
-}
-#galerie-animata figure:nth-child(6) {
-  animation-delay: 15s;
-}
 
 @keyframes anim-galerie {
   0% {
@@ -61,18 +55,18 @@
     /* Imagine completă */
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%, 0 50%, 100% 50%, 100% 100%, 0 100%);
   }
-  11.6666666667% {
+  20% {
     z-index: 10;
     opacity: 1;
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%, 0 50%, 100% 50%, 100% 100%, 0 100%);
   }
-  16.6666666667% {
+  25% {
     z-index: 10;
     opacity: 1;
     /* Imagine tăiată la maxim (rămân doar 2 dungi invizibile sus/jos) */
     clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%, 0 100%, 100% 100%, 100% 100%, 0 100%);
   }
-  16.6676666667% {
+  25.001% {
     z-index: 1;
     opacity: 0;
     /* Se ascunde tăcut în spate și își reface forma */

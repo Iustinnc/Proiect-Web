@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta name="description"
+        content="Detalii tehnice complete și dotări pentru modelul <%- locals.prod.nume %> din showroom-ul nostru auto.">
+    <meta name="keywords" content="masini, showroom, auto, autoturisme, specificatii, <%- locals.prod.nume %>">
+
+    <title>CarSW - <%- locals.prod.nume %></title>
+    <%- include("../fragmente/head") %>
+        <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <%- include("../fragmente/header") %>
+
+        <main>
+            <section>
+                <h2>Detalii Autoturism</h2>
+
+                <article id="art-produs">
+                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+
+                    <div class="specificatii-auto">
+                        <p>Preț: <span class="pret"><%- locals.prod.pret %></span> €</p>
+                        <p>Stare mașină: <span class="stare"><%- locals.prod.stare_masina %></span></p>
+                        <p>Tip caroserie: <span class="categorie"><%- locals.prod.categorie %></span></p>
+                        <p>Tip combustibil: <span class="combustibil"><%- locals.prod.combustibil %></span></p>
+                        <p>Putere motor: <span class="putere"><%- locals.prod.putere_cp %></span> CP</p>
+                        <p>Rulaj actual: <span class="rulaj"><%- locals.prod.nr_km %></span> km</p>
+                        <p>Mașină înmatriculată: <span class="inmatriculata"><%- locals.prod.inmatriculata ? "Da" : "Nu"
+                                    %></span></p>
+                        <p>Data adăugare în ofertă: <span class="data"><%-
+                                    locals.prod.data_adaugare.toLocaleDateString('ro-RO') %></span></p>
+
+                        <div class="descriere-completa">
+                            <p><strong>Descriere:</strong></p>
+                            <span class="descriere"><%- locals.prod.descriere %></span>
+                        </div>
+
+                        <div class="dotari-auto">
+                            <p><strong>Dotări și opționale:</strong></p>
+                            <span class="dotari"><%- locals.prod.dotari %></span>
+                        </div>
+                    </div>
+
+                    <div id="caruselMasina" class="carousel slide shadow rounded-3 overflow-hidden mb-4"
+                        data-bs-ride="carousel">
+
+                        <% if (imagini.length> 1) { %>
+                            <div class="carousel-indicators">
+                                <% for(let i=0; i < imagini.length; i++) { %>
+                                    <button type="button" data-bs-target="#caruselMasina" data-bs-slide-to="<%= i %>"
+                                        class="<%= i === 0 ? 'active' : '' %>"
+                                        aria-current="<%= i === 0 ? 'true' : 'false' %>"
+                                        aria-label="Slide <%= i + 1 %>"></button>
+                                    <% } %>
+                            </div>
+                            <% } %>
+
+                                <div class="carousel-inner">
+                                    <% for(let i=0; i < imagini.length; i++) { %>
+                                        <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+                                            <img src="<%= imagini[i] %>" class="d-block w-100 object-fit-cover"
+                                                style="height: 450px;" alt="Fotografie <%= prod.nume %>">
+                                        </div>
+                                        <% } %>
+                                </div>
+
+                                <% if (imagini.length> 1) { %>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#caruselMasina"
+                                        data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Anterior</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#caruselMasina"
+                                        data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Următor</span>
+                                    </button>
+                                    <% } %>
+                    </div>
+
+                    <% if (produseSimilare && produseSimilare.length> 0) { %>
+                        <section class="produse-similare mt-5 mb-5 container">
+                            <hr>
+                            <h3 class="mb-4 text-center">S-ar putea să te intereseze și alte mașini din categoria
+                                <strong>
+                                    <%= prod.categorie %>
+                                </strong></h3>
+
+                            <div class="row">
+                                <% for(let sim of produseSimilare) { %>
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <div class="card shadow-sm h-100">
+                                            <a href="/produs/<%= sim.id %>">
+                                                <img src="<%= sim.imagine %>"
+                                                    class="card-img-top object-fit-cover" style="height: 200px;"
+                                                    alt="<%= sim.nume %>">
+                                            </a>
+
+                                            <div class="card-body text-center">
+                                                <a href="/produs/<%= sim.id %>" class="text-decoration-none text-dark">
+                                                    <h5 class="card-title fw-bold">
+                                                        <%= sim.nume %>
+                                                    </h5>
+                                                </a>
+                                                <p class="card-text text-muted mb-1">
+                                                    <%= sim.nr_km %> km | <%= sim.putere_cp %> CP
+                                                </p>
+                                                <h6 class="text-danger fw-bold">
+                                                    <%= sim.pret %> EUR
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                            </div>
+                        </section>
+                        <% } %>
+                </article>
+
+            </section>
+        </main>
+
+        <%- include("../fragmente/footer") %>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta name="description"
+        content="Showroom auto online. Găsește mașina perfectă pentru tine, de la modele noi la mașini rulate și clasice.">
+    <meta name="keywords" content="masini, showroom, auto, autoturisme, suv, sedan, masini rulate, masini noi">
+    <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+    <title>CarSW - Oferte Mașini</title>
+    <%- include("../fragmente/head") %>
+        <script type="text/javascript" src="/resurse/js/produse.js"></script>
+        <script type="text/javascript" src="/resurse/js/produse-cos.js"></script>
+</head>
+
+<body>
+
+    <%- include("../fragmente/header") %>
+
+        <main class="container py-4">
+
+
+            <div id="panou-filtre" class="p-4 rounded-3 border border-secondary mb-4 bg-dark bg-opacity-20 text-white">
+                <div class="row g-3">
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <label for="inp-nume" class="form-label fw-bold">Model mașină:</label>
+                        <input type="text" id="inp-nume" class="form-control bg-dark text-white border-secondary"
+                            placeholder="Ex: Logan, Golf 8...">
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <label for="inp-categorie" class="form-label fw-bold">Tip Caroserie:</label>
+                        <select id="inp-categorie" class="form-select bg-dark text-white border-secondary">
+                            <option selected value="toate">oricare (toate)</option>
+                            <% for (let opt of locals.optiuni) { %>
+                                <option value="<%- opt.unnest %>"><%- opt.unnest %> </option>
+                                <% } %>
+                        </select>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <label for="inp-putere-dl" class="form-label fw-bold">Putere minimă sugerată (CP):</label>
+                        <input type="text" id="inp-putere-dl" class="form-control bg-dark text-white border-secondary"
+                            list="id_lista_putere" placeholder="Alege sau scrie...">
+                        <datalist id="id_lista_putere">
+                            <option value="90"></option>
+                            <option value="120"></option>
+                            <option value="150"></option>
+                            <option value="192"></option>
+                        </datalist>
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                        <label for="inp-km" class="form-label fw-bold">
+                            Kilometri maximi: <span id="opt-km">
+                                <%= max_km %>
+                            </span> km
+                        </label>
+
+                        <input type="range" class="form-range" id="inp-km" min="<%= min_km %>" max="<%= max_km %>"
+                            value="<%= max_km %>" step="5">
+
+                        <div class="d-flex justify-content-between text-muted small">
+                            <span>Min: <%= min_km %> km</span>
+                            <span>Max: <%= max_km %> km</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <label class="form-label fw-bold">Interval Preț (€):</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-secondary text-white border-secondary">Min</span>
+                            <input type="number" id="inp-pret-min"
+                                class="form-control bg-dark text-white border-secondary"
+                                value="<%- locals.pret_min || 0 %>" min="<%- locals.pret_min || 0 %>">
+                            <span class="input-group-text bg-secondary text-white border-secondary">Max</span>
+                            <input type="number" id="inp-pret-max"
+                                class="form-control bg-dark text-white border-secondary"
+                                value="<%- locals.pret_max || 150000 %>" min="<%- locals.pret_min || 0 %>">
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <label for="inp-combustibil-mult" class="form-label fw-bold">Tip Combustibil:</label>
+                        <select id="inp-combustibil-mult" class="form-select bg-dark text-white border-secondary"
+                            multiple size="4">
+                            <option value="Benzina" selected>Benzină</option>
+                            <option value="Diesel" selected>Diesel</option>
+                            <option value="Electric" selected>Electric</option>
+                            <option value="Hybrid" selected>Hibrid</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label class="form-label d-block fw-bold">Stare autoturism:</label>
+                        <div class="btn-group w-100" role="group">
+                            <input type="radio" class="btn-check" name="gr_rad_stare" id="rad-toate" value="toate"
+                                checked>
+                            <label class="btn btn-outline-info" for="rad-toate">Oricare</label>
+
+                            <input type="radio" class="btn-check" name="gr_rad_stare" id="rad-noua" value="Noua">
+                            <label class="btn btn-outline-info" for="rad-noua">Nouă</label>
+
+                            <input type="radio" class="btn-check" name="gr_rad_stare" id="rad-rulata" value="Rulata">
+                            <label class="btn btn-outline-info" for="rad-rulata">Rulată</label>
+
+                            <input type="radio" class="btn-check" name="gr_rad_stare" id="rad-clasica" value="Clasica">
+                            <label class="btn btn-outline-info" for="rad-clasica">Clasică</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label class="form-label d-block fw-bold">Regim Înmatriculare:</label>
+                        <div class="btn-group w-100" role="group" aria-label="Filtru inmatriculare">
+                            <input type="checkbox" class="btn-check" id="chk-inmat-da" value="da" checked>
+                            <label class="btn btn-outline-info" for="chk-inmat-da">Înmatriculate</label>
+
+                            <input type="checkbox" class="btn-check" id="chk-inmat-nu" value="nu" checked>
+                            <label class="btn btn-outline-info" for="chk-inmat-nu">Neînmatriculate</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-floating mb-2 text-dark">
+                            <textarea id="inp-descriere" class="form-control bg-dark text-white border-secondary"
+                                placeholder=" " style="height: 100px;"></textarea>
+                            <label for="inp-descriere" id="lbl-descriere" class="text-secondary">Cuvinte cheie în
+                                descriere (separate prin virgulă)</label>
+                            <div class="invalid-feedback fw-bold text-danger bg-white p-1 rounded mt-1">Folosiți doar
+                                litere, cifre și virgulă!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4 pt-3 border-top border-secondary border-opacity-25 g-2">
+                    <div class="col-6 col-sm-auto">
+                        <button id="filtrare" class="btn btn-info text-dark w-100 fw-bold">
+                            <i class="bi bi-funnel-fill"></i> <span class="d-none d-md-inline">Filtrează</span>
+                        </button>
+                    </div>
+
+                    <div class="col-6 col-sm-auto"><button id="resetare" class="btn btn-secondary w-100"><i
+                                class="bi bi-arrow-counterclockwise"></i> <span
+                                class="d-none d-md-inline">Resetează</span>
+                        </button>
+                    </div>
+
+                    <div class="col-12 col-sm-auto ms-sm-auto"><button id="calculare"
+                            class="btn btn-light text-dark w-100 fw-bold"><i class="bi bi-calculator"></i> <span
+                                class="d-none d-md-inline">Calculează Preț Mediu</span>
+                        </button>
+                    </div>
+
+
+                    <div id="zona-sortare" class="p-4 rounded-3 mb-4 shadow-sm">
+                        <h5 class="mb-3 fw-bold"><i class="fa-solid fa-arrow-down-a-z"></i> Sortare Dublă Personalizată
+                        </h5>
+                        <div class="row g-3 align-items-center">
+
+                            <div class="col-12 col-md-3">
+                                <label for="sel-sort1" class="form-label small fw-bold">Prima cheie</label>
+                                <select id="sel-sort1" class="form-select bg-dark text-white border-secondary">
+                                    <option value="pret">Preț</option>
+                                    <option value="nume">Nume</option>
+                                    <option value="km">Kilometri</option>
+                                    <option value="putere">Putere</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 col-md-3">
+                                <label for="sel-sort2" class="form-label small fw-bold">A doua cheie (la
+                                    egalitate)</label>
+                                <select id="sel-sort2" class="form-select bg-dark text-white border-secondary">
+                                    <option value="km">Kilometri</option>
+                                    <option value="pret">Preț</option>
+                                    <option value="nume">Nume</option>
+                                    <option value="putere">Putere</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 col-md-3">
+                                <label for="sel-ordine" class="form-label small fw-bold">Ordine</label>
+                                <select id="sel-ordine" class="form-select bg-dark text-white border-secondary">
+                                    <option value="1">Crescător ↑</option>
+                                    <option value="-1">Descrescător ↓</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 col-md-3 pt-md-4">
+                                <button id="btn-sorteaza" class="btn btn-primary w-100 fw-bold py-2">Sortează
+                                    Mașinile</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="mesaj-lipsa-produse" class="alert alert-warning text-center fw-bold mt-4 w-100 mx-auto"
+                style="display: none; max-width: 600px;">
+                <i class="bi bi-search"></i> Nu am găsit nicio mașină care să corespundă filtrelor tale. <br>
+            </div>
+
+            <div class="grid-produse">
+
+                <% ieftinCat={}; for(let p of locals.produse) { let cat=p.categorie; if(!ieftinCat[cat] ||
+                    parseFloat(p.pret) < parseFloat(ieftinCat[cat].pret)) { ieftinCat[cat]={ id: p.id, pret: p.pret }; }
+                    } %>
+
+                    <% for( let prod of locals.produse) { %>
+                        <article class="produs <%- prod.categorie %> <%- prod.stare_masina %>" id="ent<%- prod.id %>">
+
+                            <h3 class="nume d-flex align-items-center justify-content-between flex-wrap gap-2">
+                                <a href="/produs/<%- prod.id %>"><span class="val-nume"><%- prod.nume %></span></a>
+
+                                <% if(ieftinCat[prod.categorie] && ieftinCat[prod.categorie].id===prod.id) { %>
+                                    <span class="insigna-ieftin">🔥 Cel mai ieftin <%- prod.categorie %></span>
+                                    <% } %>
+                            </h3>
+
+                            <div class="produs-toolbar d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-warning btn-pin"
+                                    title="Fixează produsul: Rămâne permanent pe ecran, indiferent de filtrările viitoare"
+                                    data-id="ent<%- prod.id %>">
+                                    <i class="bi bi-pin-angle"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary btn-ascunde-temp"
+                                    title="Ascunde temporar: Produsul dispare acum, dar va reăpărea la următoarea filtrare, sortare sau resetare"
+                                    data-id="ent<%- prod.id %>">
+                                    <i class="bi bi-eye-slash"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger btn-ascunde-sesiune"
+                                    title="Ascunde pe durata sesiunii: Produsul dispare complet din acest tab și nu va mai apărea nici la refresh"
+                                    data-id="ent<%- prod.id %>">
+                                    <i class="bi bi-ban"></i>
+                                </button>
+                            </div>
+                            <div class="produs-continut-top">
+                                <table class="tabel-auto">
+                                    <thead>
+                                        <tr>
+                                            <th>Preț / Rulaj</th>
+                                            <th>Combustibil</th>
+                                            <th>Înmatriculată</th>
+                                            <th>Data adăugare</th>
+                                            <th>Dotări disponibile</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="val-pret"><%- prod.pret %></span> € /
+                                                <span class="val-km"><%- prod.nr_km %></span> km
+                                                <span class="val-putere" style="display:none;"><%- prod.putere_cp
+                                                        %></span>
+                                            </td>
+                                            <td><span class="val-combustibil"><%- prod.combustibil %></span></td>
+                                            <td><span class="val-inmatriculata"><%- prod.inmatriculata ? "Da" : "Nu"
+                                                        %></span></td>
+                                            <td>
+                                                <% const zileSaptamana=["Duminica", "Luni" , "Marti" , "Miercuri"
+                                                    , "Joi" , "Vineri" , "Sambata" ]; const
+                                                    luniAn=["Ianuarie", "Februarie" , "Martie" , "Aprilie" , "Mai"
+                                                    , "Iunie" , "Iulie" , "August" , "Septembrie" , "Octombrie"
+                                                    , "Noiembrie" , "Decembrie" ]; let d=new Date(prod.data_adaugare);
+                                                    let dataFormatata=d.getDate() + "(" + zileSaptamana[d.getDay()]
+                                                    + ")/" + luniAn[d.getMonth()] + "/" + d.getFullYear(); %>
+                                                    <time datetime="<%- prod.data_adaugare %>"><%- dataFormatata
+                                                            %></time>
+                                            </td>
+                                            <td><span class="val-dotari"><%- prod.dotari %></span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <figure class="foto-dreapta"><img src="<%- prod.imagine %>"
+                                        alt="[imagine <%- prod.nume %>]" /></figure>
+                            </div>
+                            <p class="descriere-scurta"><strong>Descriere:</strong> <span class="val-descriere"><%-
+                                        prod.descriere %></span></p>
+                            <p class="categorie">Caroserie: <span class="val-categorie"><%- prod.categorie %></span></p>
+                        </article>
+                        <% } %>
+
+            </div>
+        </main>
+
+        <%- include("../fragmente/footer") %>
+</body>
+
+</html>

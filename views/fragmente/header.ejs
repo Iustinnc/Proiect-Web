@@ -2,7 +2,7 @@
     <h1>Mașini - Catalog și Recenzii Auto</h1>
     <nav class="main-nav">
         <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-        
+
         <label for="menu-toggle" class="hamburger-menu">
             <span class="line"></span>
             <span class="line"></span>
@@ -13,10 +13,17 @@
             <li><a href="/index"><i class="fa-solid fa-house"></i> Acasă</a></li>
             <li><a href="/index#noutati"><i class="fa-solid fa-newspaper"></i> Noutăți</a></li>
             <li class="menu-item-group">
-                <a href="/index#catalog"><i class="fa-solid fa-car"></i> Catalog</a>
+                <a href="/produse?categorie=toate"><i class="fa-solid fa-car"></i> Catalog</a>
                 <ul class="submenu">
-                    <li><a href="/produse-a.html">Mașini</a></li>
-                    <li><a href="/produse-b.html">Piese</a></li>
+                    <% if (locals.optiuni) { %>
+                        <% for (let opt of locals.optiuni) { %>
+                            <li>
+                                <a href="/produse?categorie=<%- opt.unnest %>">
+                                    <%- opt.unnest %>
+                                </a>
+                            </li>
+                            <% } %>
+                                <% } %>
                 </ul>
             </li>
             <li class="menu-item-group">
@@ -30,11 +37,24 @@
             <li><a href="/despre"><i class="fa-solid fa-info-circle"></i> Despre Noi</a></li>
         </ul>
     </nav>
-    <div class="user-info" style="text-align: right; font-size: 0.9rem; margin-top: 10px;">
-        Conectat de la IP: <strong><%- locals.ip || 'Necunoscut' %></strong>
+    <div class="header-dreapta" style="text-align: right; padding: 10px 15px;">
+    <div class="theme-switch-container" style="display: inline-flex; align-items: center; gap: 10px; margin-bottom: 5px;">
+        <span style="color: #ffffff; font-size: 0.9rem; font-weight: bold;">
+            <i class="fa-solid fa-sun text-warning"></i> / <i class="fa-solid fa-moon text-info"></i>
+        </span>
+        
+        <input type="checkbox" id="switch-tema" class="switch-custom-input">
+        <label for="switch-tema" class="switch-custom-label"></label>
     </div>
 
-    <a href="/index#top" class="scroll-top" title="Back to Top">
-            <span class="arrow">&#8593;</span>
-        </a>
+    <div class="user-info" style="font-size: 0.9rem; color: #ffffff;">
+        Conectat de la IP: <strong><%- locals.ip || 'Necunoscut' %></strong>
+    </div>
+</div>
+
+    <a href="#" class="scroll-top" title="Back to Top">
+        <span class="arrow">&#8593;</span>
+    </a>
+
+    
 </header>

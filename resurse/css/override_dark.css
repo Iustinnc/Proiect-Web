@@ -1,0 +1,180 @@
+/* ==========================================================================
+   1. REPARARE TEXTE INVIZIBILE PE INDEX (CALENDAR, PARAGRAFE, ETICHETE)
+   ========================================================================== */
+
+html[data-theme="dark"] header,
+html[data-theme="dark"] nav,
+html[data-theme="dark"] .main-nav,
+html[data-theme="dark"] .menu-list,
+html[data-theme="dark"] .submenu {
+    background-color: #090c0b !important; 
+    background: #090c0b !important; 
+    border-bottom: 2px solid #1c2322 !important;
+}
+
+
+html[data-theme="dark"] header h1 {
+    color: #63C8BA !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+
+html[data-theme="dark"] .menu-list li {
+    background-color: transparent !important;
+}
+
+html[data-theme="dark"] .menu-list a {
+    color: #e2ecea !important;
+}
+
+
+html[data-theme="dark"] .menu-list a:hover {
+    background-color: #1c2322 !important;
+    color: #50F2DD !important;
+}
+
+
+
+html[data-theme="dark"] :is(table, tr, td, .table, .bg-white, .bg-light) {
+    background-color: #1c2322 !important; 
+    color: #e2ecea !important;
+    border-color: #313f3d !important;
+}
+
+
+html[data-theme="dark"] th {
+    background-color: rgba(99, 200, 186, 0.15) !important;
+    color: #63C8BA !important;
+    border-color: #313f3d !important;
+}
+
+
+html[data-theme="dark"] .header-dreapta,
+html[data-theme="dark"] :is(header, nav) div,
+html[data-theme="dark"] .user-info {
+    background-color: transparent !important;
+    background: transparent !important;
+    color: #ffffff !important;
+}
+
+.insigna-ieftin {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #f5af19, #e12d27) !important; /* Gradient cald chilipir */
+    color: #ffffff !important;
+    font-size: 0.72rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 50px;
+    box-shadow: 0 3px 8px rgba(225, 45, 39, 0.35);
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.produs:has(.insigna-ieftin) {
+    border-left: 5px solid #e12d27 !important;
+    
+}
+
+
+html[data-theme="dark"] .produs:has(.insigna-ieftin) {
+    border-left: 5px solid #f5af19 !important;
+    background-color: rgba(99, 200, 186, 0.02) !important;
+}
+
+.produs-toolbar {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.produs-toolbar .btn {
+    border-radius: 8px;
+    padding: 5px 10px;
+    transition: all 0.2s ease;
+}
+
+
+.produs.produs-pinned {
+    border: 2px dashed #ffc107 !important;
+    background-color: rgba(255, 193, 7, 0.04) !important;
+}
+.produs.produs-pinned .val-nume{
+    color: #ffc107 !important;
+}
+
+html[data-theme="dark"] .produs.produs-pinned {
+    border: 2px dashed #ffc107 !important;
+    background-color: rgba(255, 193, 7, 0.02) !important;
+}
+
+/* Forțare stare activă buton PIN */
+.btn-pin.active {
+    background-color: #ffc107 !important;
+    color: #111111 !important;
+    border-color: #ffc107 !important;
+}
+
+
+.switch-custom-input {
+    display: none !important; 
+}
+
+.switch-custom-label {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+    background-color: #3A4846;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 !important;
+    vertical-align: middle;
+}
+
+/* Bulina din interiorul switch-ului */
+.switch-custom-label::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    top: 3px;
+    left: 3px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.switch-custom-input:checked + .switch-custom-label {
+    background-color: #63C8BA; /* Fundal mentă */
+}
+
+.switch-custom-input:checked + .switch-custom-label::after {
+    left: 25px; /* Culisează bulina la dreapta */
+    background-color: #111615; /* Bulina se încinge la culoarea fundalului */
+}
+
+
+html[data-theme="dark"] :is(.main-nav, .menu-list, nav, .submenu) {
+    background-color: #090c0b !important; /* Cărbune profund, mult mai întunecat */
+    border-color: #313f3d !important;
+}
+
+
+html[data-theme="dark"] .menu-list a {
+    color: #e2ecea !important;
+}
+
+
+
+html[data-theme="dark"] :is(body, main, section, .container, .container-fluid, .row, [class*="continut"], [class*="wrapper"]) {
+    background-color: #111615 !important; /* Negru-mintoas profund */
+}
+
+
+html[data-theme="dark"] :is(#noutati, #servicii, #contact, .sectiune) {
+    background-color: #111615 !important;
+}

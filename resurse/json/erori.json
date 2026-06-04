@@ -26,6 +26,13 @@
             "titlu": "400 - Cerere Invalidă",
             "text": "Te rugăm să nu încerci să accesezi fișierele noastre interne (EJS).",
             "imagine": "error-icon.png"
+        },
+        {
+            "identificator": 2,
+            "status": false,
+            "titlu": "Eroare Baza de Date",
+            "text": "A apărut o eroare la accesarea bazei de date.",
+            "imagine": "error-icon.png"
         }
     ]
 }
